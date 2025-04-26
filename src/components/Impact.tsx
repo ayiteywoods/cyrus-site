@@ -57,7 +57,7 @@ const Impact = () => {
          className='rounded-xl shadow-md bg-white flex justify-between'>
            <div className='p-4'>
                <h1 className='text-3xl font-semibold '><CountUp end={30}/>K+</h1>
-               <p>We've experienced more than 10+ years with success.</p>
+               <p>We&apos;ve experienced more than 10+ years with success.</p>
           </div>
          <div className='place-content-center bg-white' >
              <Image src='/c1.webp' alt='c1' width={300} height={150}/>
@@ -85,7 +85,7 @@ className='rounded-xl shadow-md bg-white flex justify-between'>
                     whileInView={{ opacity: 1 }}  className='rounded-xl shadow-md bg-white flex justify-between'>
     <div className='p-4'>
         <h1 className='text-3xl font-semibold '><CountUp end={100}/>+</h1>
-        <p>We've made clients happy all over the world.</p>
+        <p>We&apos;ve made clients happy all over the world.</p>
     </div>
     <div className='place-content-center bg-white' >
     <Image src='/c3.webp' alt='c3' width={300} height={150}/>

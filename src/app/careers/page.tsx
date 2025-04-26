@@ -11,7 +11,7 @@ const page = () => {
             <div className='rounded-lg bg-white p-8 opacity-70'>
                 <p className='pt-2 text-blue-600 '>Frequently Asked Questions</p>
                 <p className='pt-2 pb-4'>Business insights enable smart moves towards wealth & security.</p>
-                <h1 className='pt-4 pb-4 text-3xl '>Got questions? We've got you covered.</h1>
+                <h1 className='pt-4 pb-4 text-3xl '>Got questions? We&apos;ve got you covered.</h1>
                 <button className='px-6 py-3 rounded-lg text-white bg-blue-500'>GET IN TOUCH</button>
             </div>
         </div>

@@ -32,10 +32,10 @@ const page = () => {
          className='bg-blue-400 rounded-lg p-10 flex flex-col items-center justify-center gap-4 pb-12'>
             <Image src='/loan3.webp' alt='loan' width={200} height={60}/>
                 <h1 className='text-white text-4xl text-center'>Want a Custom Loan for your Business?</h1>
-                 <button className='w-full rounded-lg border-1 bg-blue-500 px-6 py-3 border-blue-300 hover:bg-blue-600 text-white'>LET'S TALK</button>
+                 <button className='w-full rounded-lg border-1 bg-blue-500 px-6 py-3 border-blue-300 hover:bg-blue-600 text-white'>LET&apos;S TALK</button>
         </motion.div>
             <div className='border-1 rounded-lg border-blue-100 p-5'>
-                <h1 className='text-3xl font-thin p-2 '>Got questions? We've got you covered.</h1>
+                <h1 className='text-3xl font-thin p-2 '>Got questions? We&apos;ve got you covered.</h1>
                 <LoanFAQ />
                 
             </div>

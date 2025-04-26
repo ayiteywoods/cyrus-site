@@ -11,7 +11,7 @@ const page = () => {
         <div className='flex justify-between items-center'>
             <div className='rounded-lg bg-white p-8 opacity-70'>
                 <p className='pt-2 text-blue-600 '>Our Services</p>
-                <p className='pt-2 pb-4'>Tailored solutions to help your business thrive in today's competitive landscape.</p>
+                <p className='pt-2 pb-4'>Tailored solutions to help your business thrive in today&apos;s competitive landscape.</p>
                 <h1 className='pt-4 pb-4 text-3xl '>Comprehensive Financial Solutions</h1>
                 <button className='px-6 py-3 rounded-lg text-white bg-blue-500'>GET IN TOUCH</button>
             </div>

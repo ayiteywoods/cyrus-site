@@ -18,7 +18,7 @@ const page = () => {
                  className='rounded-lg bg-white p-8 opacity-70'>
                     <p className='pt-2 text-blue-600 '>About Us</p>
                     <p className='pt-2 pb-4'>Navigating your business growth with experience & insightful solutions.</p>
-                    <h1 className='pt-4 pb-4 text-3xl '>We're a award winner business company.</h1>
+                    <h1 className='pt-4 pb-4 text-3xl '>We&apos;re a award winner business company.</h1>
                     <button className='px-6 py-3 rounded-lg text-white bg-blue-500'>GET IN TOUCH</button>
                 </div>
             </div>

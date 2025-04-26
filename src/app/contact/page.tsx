@@ -11,7 +11,7 @@ export default function ContactPage() {
             <div className='flex justify-between items-center'>
                 <div className='rounded-lg bg-white p-8 opacity-90'>
                     <p className='pt-2 text-blue-400 '>Contact Us</p>
-                    <p className='pt-2 pb-4'>We’ll gladly answer any of your questions..</p>
+                    <p className='pt-2 pb-4'>We&apos;ll gladly answer any of your questions..</p>
                     <h1 className='pt-4 pb-4 text-3xl '>Get in touch with us! We are here to Help!</h1>
                     <button className='px-6 py-3 rounded-lg text-white bg-blue-400'>GET IN TOUCH</button>
                 </div>
