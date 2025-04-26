@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
@@ -30,7 +30,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
-  const menuItemRefs = useRef<{[key: string]: HTMLDivElement | null}>({});
+  const menuItemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Close menus when clicking outside
   useEffect(() => {
@@ -89,7 +89,9 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
               <div 
                 key={item.title} 
                 className="relative"
-                ref={el => menuItemRefs.current[item.title] = el}
+                ref={(el) => {
+                  menuItemRefs.current[item.title] = el;
+                }}
               >
                 {item.isSimpleLink ? (
                   // Render as simple link (for FAQ)
@@ -102,8 +104,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                     {item.title}
                   </Link>
                 ) : (
-                  // Render as dropdown toggle
                   <>
+                    {/* Render as dropdown toggle */}
                     <button
                       onClick={() => toggleMenu(item.title)}
                       className={`flex items-center px-4 py-5 text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium ${
