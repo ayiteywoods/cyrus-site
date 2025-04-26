@@ -5,7 +5,7 @@ const page = () => {
   return (
     <>
     <div className='bg-blue-900 relative max-w-full h-[400px]'>
-                <Image src="/slider5.jpg " alt="bg" fill className='object-cover'/>
+                <Image src='/slider5.jpg' alt='bg' fill className='object-cover'/>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
         <div className='flex justify-between items-center'>
             <div className='rounded-lg bg-white p-8 opacity-70'>

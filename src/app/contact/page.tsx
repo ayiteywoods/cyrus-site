@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, ChevronDown } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Image from 'next/image';
 
 export default function ContactPage() {
@@ -6,7 +6,7 @@ export default function ContactPage() {
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
       <div className='bg-blue-900 max-w-full relative'>
-        <Image src="/slider3.jpg " alt="bg" fill className='object-cover' />
+        <Image src='/slider3.jpg' alt='bg' fill className='object-cover' />
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
             <div className='flex justify-between items-center'>
                 <div className='rounded-lg bg-white p-8 opacity-90'>

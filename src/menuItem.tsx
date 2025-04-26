@@ -1,4 +1,3 @@
-import { Banknote, CreditCard, Globe, Smartphone } from 'lucide-react';
 
 export const menuItems = [
   {

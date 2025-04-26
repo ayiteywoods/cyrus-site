@@ -9,7 +9,7 @@ const page = () => {
   return (
     <>
     <div className='bg-blue-900 relative max-w-full h-[400px]'>
-                <Image src="/slider3.jpg " alt="bg" fill className='object-cover'/>
+                <Image src='/slider3.jpg' alt='bg' fill className='object-cover'/>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
         <div className='flex justify-between items-center'>
             <div className='rounded-lg bg-white p-8 opacity-70'>
@@ -30,7 +30,7 @@ const page = () => {
                             whileTap={{ scale:1 }}
                             whileInView={{ opacity: 1 }} 
          className='bg-blue-400 rounded-lg p-10 flex flex-col items-center justify-center gap-4 pb-12'>
-            <Image src="/loan3.webp" alt='loan' width={200} height={60}/>
+            <Image src='/loan3.webp' alt='loan' width={200} height={60}/>
                 <h1 className='text-white text-4xl text-center'>Want a Custom Loan for your Business?</h1>
                  <button className='w-full rounded-lg border-1 bg-blue-500 px-6 py-3 border-blue-300 hover:bg-blue-600 text-white'>LET'S TALK</button>
         </motion.div>

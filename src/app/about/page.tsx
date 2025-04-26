@@ -1,7 +1,7 @@
 'use client'
 
 import Partners from '@/components/Partners'
-import { Antenna, DatabaseBackup, Goal } from 'lucide-react'
+import {  DatabaseBackup, Goal } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import CountUp from 'react-countup'

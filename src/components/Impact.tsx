@@ -1,6 +1,5 @@
 'use client'
 
-import { Award, Globe, LucideAward, Trophy } from 'lucide-react'
 import Image from 'next/image'
 import CountUp from 'react-countup';
 import React from 'react'
