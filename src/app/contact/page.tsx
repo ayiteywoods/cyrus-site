@@ -62,7 +62,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-thin">Email Us</h3>
               </div>
-              <p className="text-gray-600 mb-4">Send us an email and we'll get back to you shortly</p>
+              <p className="text-gray-600 mb-4">Send us an email and we&apos;ll get back to you shortly</p>
               <a 
                 href="mailto:customerservice@example.com" 
                 className="text-blue-400 font-medium hover:underline inline-block"
