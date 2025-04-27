@@ -1,11 +1,20 @@
 'use client'
 
-import Map from '@/components/Map';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import Image from 'next/image';
+import dynamic from 'next/dynamic'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import Image from 'next/image'
+
+const Map = dynamic(() => import('@/components/Map'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[500px] flex items-center justify-center bg-gray-100">
+      <p>Loading map...</p>
+    </div>
+  )
+})
 
 export default function ContactPage() {
-  const officeLocation: [number, number] = [5.6037, -0.1870]; // Accra coordinates
+  const officeLocation: [number, number] = [5.6037, -0.1870]
   const branchLocations = [
     {
       position: [5.6137, -0.1770] as [number, number],
@@ -18,31 +27,36 @@ export default function ContactPage() {
       title: 'Tema Branch',
       icon: 'office' as const,
     },
-  ];
+  ]
   
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <div className='bg-blue-900 max-w-full relative'>
-        <Image src='/slider3.jpg' alt='bg' fill className='object-cover' />
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-            <div className='flex justify-between items-center'>
-                <div className='rounded-lg bg-white p-8 opacity-90'>
-                    <p className='pt-2 text-blue-400 '>Contact Us</p>
-                    <p className='pt-2 pb-4'>We&apos;ll gladly answer any of your questions..</p>
-                    <h1 className='pt-4 pb-4 text-3xl '>Get in touch with us! We are here to Help!</h1>
-                    <button className='px-6 py-3 rounded-lg text-white bg-blue-400'>GET IN TOUCH</button>
-                </div>
-            </div>
-            </div>
+      <div className='bg-blue-900 max-w-full relative h-[400px]'>
+        <Image 
+          src='/slider3.jpg' 
+          alt='bg' 
+          fill 
+          className='object-cover'
+          priority
+        />
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 h-full flex items-center'>
+          <div className='rounded-lg bg-white p-8 opacity-90 max-w-2xl'>
+            <p className='pt-2 text-blue-400'>Contact Us</p>
+            <p className='pt-2 pb-4'>We&apos;ll gladly answer any of your questions.</p>
+            <h1 className='pt-4 pb-4 text-3xl'>Get in touch with us! We are here to Help!</h1>
+            <button className='px-6 py-3 rounded-lg text-white bg-blue-400 hover:bg-blue-500 transition-colors'>
+              GET IN TOUCH
+            </button>
+          </div>
         </div>
+      </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Contact Methods */}
+          {/* Contact Methods */}
           <div className="lg:col-span-1 space-y-6">
-            {/* Phone Support */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -55,13 +69,13 @@ export default function ContactPage() {
                 <div>
                   <p className="text-gray-500 text-sm">General Inquiries</p>
                   <a href="tel:+233302611611" className="text-blue-400 font-medium hover:underline">
-                  +233 553 179 240
+                    +233 553 179 240
                   </a>
                 </div>
                 <div>
                   <p className="text-gray-500 text-sm">24/7 Customer Service</p>
                   <a href="tel:+233244335577" className="text-blue-400 font-medium hover:underline">
-                  +233 553 179 240
+                    +233 553 179 240
                   </a>
                 </div>
               </div>
@@ -72,7 +86,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Email Support */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -82,14 +95,13 @@ export default function ContactPage() {
               </div>
               <p className="text-gray-600 mb-4">Send us an email and we&apos;ll get back to you shortly</p>
               <a 
-                href="mailto:customerservice@example.com" 
+                href="mailto:info@cyrusmcs.com" 
                 className="text-blue-400 font-medium hover:underline inline-block"
               >
                 info@cyrusmcs.com
               </a>
             </div>
 
-            {/* Branch Locations */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -98,7 +110,6 @@ export default function ContactPage() {
                 <h3 className="text-xl font-thin">Branch Locations</h3>
               </div>
               <p className="text-gray-600 mb-4">Find our nearest branch</p>
-              
               <div className="space-y-4">
                 <div>
                   <h4 className="font-medium">Head Office</h4>
@@ -106,18 +117,14 @@ export default function ContactPage() {
                   <p className='text-gray-600'>Newtown Post Office, P.O.Box rvt 636, Tema</p>
                   <p className="text-orange-500 text-sm mt-1">Monday - Friday: 8:30 AM - 4:00 PM</p>
                 </div>
-                
-               
               </div>
-              
             </div>
           </div>
 
-          {/* Right Column - Contact Form */}
+          {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
               <h2 className="text-2xl font-thin mb-6">Send us a message</h2>
-              
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -132,7 +139,6 @@ export default function ContactPage() {
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-400 focus:border-blue-400"
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
                       Last Name <span className="text-red-500">*</span>
@@ -146,7 +152,6 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
-                
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address <span className="text-red-500">*</span>
@@ -159,7 +164,6 @@ export default function ContactPage() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-400 focus:border-blue-400"
                   />
                 </div>
-                
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                     Phone Number
@@ -171,7 +175,6 @@ export default function ContactPage() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-400 focus:border-blue-400"
                   />
                 </div>
-                
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                     Subject <span className="text-red-500">*</span>
@@ -190,7 +193,6 @@ export default function ContactPage() {
                     <option value="other">Other</option>
                   </select>
                 </div>
-                
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Message <span className="text-red-500">*</span>
@@ -203,7 +205,6 @@ export default function ContactPage() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-400 focus:border-blue-400"
                   ></textarea>
                 </div>
-                
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -216,7 +217,6 @@ export default function ContactPage() {
                     I agree to the terms and conditions and privacy policy
                   </label>
                 </div>
-                
                 <button
                   type="submit"
                   className="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-medium"
@@ -225,14 +225,13 @@ export default function ContactPage() {
                 </button>
               </form>
             </div>
-
           </div>
-          
         </div>
-        
       </div>
-      <div>
-          <Map
+
+      {/* Map Section */}
+      <div className="w-full">
+        <Map
           center={officeLocation}
           markers={[
             {
@@ -243,8 +242,9 @@ export default function ContactPage() {
             },
             ...branchLocations,
           ]}
-          className="h-[500px]" />
+          className="h-[500px] w-full"
+        />
       </div>
     </div>
-  );
+  )
 }
