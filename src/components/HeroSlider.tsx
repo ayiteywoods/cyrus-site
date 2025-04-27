@@ -21,7 +21,7 @@ export default function HeroSlider() {
   const slides: Slide[] = [
     {
       id: 1,
-      image: '/slider1.jpg',
+      image: '/slider11.jpg',
       title: 'Digital Banking Made Easy',
       subtitle: 'Access your accounts anytime, anywhere with our secure platform',
       ctaText: 'Get Started',
@@ -109,7 +109,7 @@ export default function HeroSlider() {
                 </p>
                 <a
                   href={slide.ctaLink}
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition-colors duration-300 animate-fadeIn delay-200"
+                  className="inline-block bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 rounded-md font-medium transition-colors duration-300 animate-fadeIn delay-200"
                 >
                   {slide.ctaText}
                 </a>

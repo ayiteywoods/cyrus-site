@@ -1,55 +1,257 @@
-'use client'
-import LoanFAQ from '@/components/LoanFAQ'
-import Partners from '@/components/Partners'
-import Image from 'next/image'
-import React from 'react'
-import {motion} from 'motion/react'
+'use client';
+import LoanFAQ from '@/components/LoanFAQ';
+import Partners from '@/components/Partners';
+import LoanCalculator from '@/components/LoanCalculator';
+import LoanTestimonials from '@/components/LoanTestimonials';
+import DynamicHeroIcon from '@/components/DynamicHeroIcon';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import Image from 'next/image';
 
-const page = () => {
-  return (
-    <>
-    <div className='bg-blue-900 relative max-w-full h-[400px]'>
-                <Image src='/slider3.jpg' alt='bg' fill className='object-cover'/>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-        <div className='flex justify-between items-center'>
-            <div className='rounded-lg bg-white p-8 opacity-70'>
-                <p className='pt-2 text-blue-600 '>Apply for Loans</p>
-                <p className='pt-2 pb-4'>Choose your ideal plan. No obligation, cancel anytime.</p>
-                <h1 className='pt-4 pb-4 text-3xl '>Apply for Free.</h1>
-                <button className='px-6 py-3 rounded-lg text-white bg-blue-500'>GET IN TOUCH</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-        <div className='grid grid-cols-1 md:grid-cols-2 py-8 gap-8'>
-        <motion.div 
-                            initial={{ opacity: 0 }}
-                            whileHover={{ scale:1.1 }}
-                            whileTap={{ scale:1 }}
-                            whileInView={{ opacity: 1 }} 
-         className='bg-blue-400 rounded-lg p-10 flex flex-col items-center justify-center gap-4 pb-12'>
-            <Image src='/loan3.webp' alt='loan' width={200} height={60}/>
-                <h1 className='text-white text-4xl text-center'>Want a Custom Loan for your Business?</h1>
-                 <button className='w-full rounded-lg border-1 bg-blue-500 px-6 py-3 border-blue-300 hover:bg-blue-600 text-white'>LET&apos;S TALK</button>
-        </motion.div>
-            <div className='border-1 rounded-lg border-blue-100 p-5'>
-                <h1 className='text-3xl font-thin p-2 '>Got questions? We&apos;ve got you covered.</h1>
-                <LoanFAQ />
-                
-            </div>
-        </div>
-    </div>
-
-    <div className='bg-blue-50 p-8'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'><Partners /></div>
-        
-    </div>
-
-    
-   </>
-  )
+interface LoanType {
+  id: number;
+  name: string;
+  description: string;
+  amountRange: string;
+  interestRate: string;
+  term: string;
+  icon: string;
 }
 
-export default page
+const loanTypes: LoanType[] = [
+  {
+    id: 1,
+    name: 'Business Expansion Loan',
+    description: 'Grow your business with flexible financing options',
+    amountRange: '₵5,000 - ₵500,000',
+    interestRate: '12% - 18% p.a.',
+    term: '6 - 60 months',
+    icon: 'ChartBar'
+  },
+  {
+    id: 2,
+    name: 'Equipment Financing',
+    description: 'Acquire new equipment without upfront costs',
+    amountRange: '₵10,000 - ₵1,000,000',
+    interestRate: '10% - 15% p.a.',
+    term: '12 - 48 months',
+    icon: 'Cog'
+  },
+  {
+    id: 3,
+    name: 'Working Capital Loan',
+    description: 'Manage cash flow and operational expenses',
+    amountRange: '₵2,000 - ₵200,000',
+    interestRate: '15% - 20% p.a.',
+    term: '3 - 24 months',
+    icon: 'CurrencyDollar'
+  },
+  {
+    id: 4,
+    name: 'Agricultural Loan',
+    description: 'Special financing for farmers and agribusinesses',
+    amountRange: '₵1,000 - ₵300,000',
+    interestRate: '8% - 12% p.a.',
+    term: '6 - 36 months',
+    icon: 'Truck'
+  }
+];
+
+const Page = () => {
+  const [activeTab, setActiveTab] = useState<'types' | 'calculator' | 'faq'>('types');
+  const [selectedLoan, setSelectedLoan] = useState<LoanType | null>(null);
+
+  const processSteps = [
+    {
+      step: 1,
+      title: 'Submit Application',
+      description: 'Complete our simple online form in minutes',
+      icon: 'DocumentText'
+    },
+    {
+      step: 2,
+      title: 'Document Review',
+      description: 'We verify your documents quickly',
+      icon: 'ClipboardDocumentCheck'
+    },
+    {
+      step: 3,
+      title: 'Approval Decision',
+      description: 'Get a decision within 24-48 hours',
+      icon: 'CheckBadge'
+    },
+    {
+      step: 4,
+      title: 'Receive Funds',
+      description: 'Money disbursed to your account',
+      icon: 'Banknotes'
+    }
+  ];
+
+  return (
+    <>
+      {/* Hero Section */}
+      <div className='bg-blue-900 relative max-w-full h-[400px]'>
+        <Image src='/slider3.jpg' alt='bg' fill className='object-cover' priority />
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10'>
+          <div className='flex justify-between items-center'>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className='rounded-lg bg-white p-8 opacity-90'
+            >
+              <p className='pt-2 text-blue-600 font-medium'>Apply for Loans</p>
+              <p className='pt-2 pb-4 text-gray-700'>Choose your ideal plan. No obligation, cancel anytime.</p>
+              <h1 className='pt-4 pb-4 text-3xl font-bold'>Financial Solutions Tailored for You</h1>
+              <button className='px-6 py-3 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors'>
+                APPLY NOW
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Loan Products Section */}
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+        <div className='text-center mb-12'>
+          <h2 className='text-3xl font-thin text-gray-800'>Our Loan Products</h2>
+          <p className='text-gray-600 mt-4 max-w-2xl mx-auto'>
+            Flexible financing options designed to meet your business needs
+          </p>
+        </div>
+
+        {/* Loan Type Tabs */}
+        <div className='flex justify-center mb-8 border-b border-gray-200'>
+          <button
+            onClick={() => setActiveTab('types')}
+            className={`px-6 py-3 font-medium ${activeTab === 'types' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+          >
+            Loan Types
+          </button>
+          <button
+            onClick={() => setActiveTab('calculator')}
+            className={`px-6 py-3 font-medium ${activeTab === 'calculator' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+          >
+            Loan Calculator
+          </button>
+          <button
+            onClick={() => setActiveTab('faq')}
+            className={`px-6 py-3 font-medium ${activeTab === 'faq' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+          >
+            FAQs
+          </button>
+        </div>
+
+        {activeTab === 'types' && (
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            {loanTypes.map((loan) => (
+              <motion.div
+                key={loan.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+                className='bg-white rounded-lg shadow-md overflow-hidden border border-gray-100'
+                onClick={() => setSelectedLoan(loan)}
+              >
+                <div className='p-6'>
+                  <div className='flex justify-center mb-4'>
+                    <DynamicHeroIcon 
+                      icon={loan.icon} 
+                      className="h-12 w-12 text-blue-600" 
+                    />
+                  </div>
+                  <h3 className='text-xl font-semibold text-gray-800 mb-2'>{loan.name}</h3>
+                  <p className='text-gray-600 mb-4'>{loan.description}</p>
+                  <div className='space-y-2 text-sm'>
+                    <p><span className='font-medium'>Amount:</span> {loan.amountRange}</p>
+                    <p><span className='font-medium'>Interest:</span> {loan.interestRate}</p>
+                    <p><span className='font-medium'>Term:</span> {loan.term}</p>
+                  </div>
+                </div>
+                <div className='bg-blue-50 px-6 py-3 text-center'>
+                  <button className='text-blue-600 font-medium hover:text-blue-800'>
+                    Learn More →
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'calculator' && (
+          <LoanCalculator selectedLoan={selectedLoan} />
+        )}
+
+        {activeTab === 'faq' && (
+          <div className='bg-white rounded-lg shadow-sm p-6'>
+            <LoanFAQ />
+          </div>
+        )}
+      </div>
+
+      {/* Custom Loan CTA */}
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+        <div className='grid grid-cols-1 md:grid-cols-2 py-8 gap-8'>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            whileHover={{ scale: 1.02 }}
+            className='bg-blue-600 rounded-lg p-10 flex flex-col items-center justify-center gap-6 text-white'
+          >
+            <DynamicHeroIcon icon="ChatBubbleLeftRight" className="h-16 w-16 text-white" />
+            <h1 className='text-3xl md:text-4xl font-bold text-center'>
+              Need a Custom Loan Solution?
+            </h1>
+            <p className='text-center text-blue-100'>
+              Our financial experts will create a personalized plan for your unique needs
+            </p>
+            <button className='w-full max-w-xs rounded-lg bg-white px-6 py-3 text-blue-600 font-medium hover:bg-gray-100 transition-colors'>
+              SPEAK WITH AN ADVISOR
+            </button>
+          </motion.div>
+
+          <div className='border border-gray-200 rounded-lg p-6 shadow-sm'>
+            <h1 className='text-3xl font-thin p-2 mb-6'>Client Success Stories</h1>
+            <LoanTestimonials />
+          </div>
+        </div>
+      </div>
+
+      {/* Application Process */}
+      <div className='bg-gray-50 py-12'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <h2 className='text-3xl font-thin text-center mb-12'>Simple Application Process</h2>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
+            {processSteps.map((step) => (
+              <motion.div
+                key={step.step}
+                whileHover={{ y: -5 }}
+                className='bg-white p-6 rounded-lg shadow-sm text-center'
+              >
+                <div className='w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4'>
+                  <DynamicHeroIcon 
+                    icon={step.icon} 
+                    className="h-8 w-8 text-blue-600" 
+                  />
+                </div>
+                <h3 className='text-xl font-semibold mb-2'>{step.title}</h3>
+                <p className='text-gray-600'>{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Partners Section */}
+      <div className='bg-blue-50 p-8'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+          <Partners />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Page;

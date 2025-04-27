@@ -1,7 +1,23 @@
+import Map from '@/components/Map';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Image from 'next/image';
 
 export default function ContactPage() {
+  const officeLocation: [number, number] = [5.6037, -0.1870]; // Accra coordinates
+  const branchLocations = [
+    {
+      position: [5.6137, -0.1770] as [number, number],
+      title: 'Kumasi Branch',
+      description: 'Open Mon-Fri: 8:30AM - 5:00PM',
+      icon: 'office' as const,
+    },
+    {
+      position: [5.5537, -0.2070] as [number, number],
+      title: 'Tema Branch',
+      icon: 'office' as const,
+    },
+  ];
+  
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -208,62 +224,24 @@ export default function ContactPage() {
               </form>
             </div>
 
-            {/* Combined FAQ and Newsletter Section */}
-            <div className="mt-8 grid grid-cols-1 gap-8">
-         
-              {/* Newsletter Subscription */}
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-                <div className="flex items-center mb-4">
-                  <Mail className="text-blue-400 h-6 w-6 mr-3" />
-                  <h2 className="text-2xl font-thin">Stay Updated</h2>
-                </div>
-                <p className="text-gray-600 mb-6">
-                  Subscribe to our newsletter for the latest updates, news, and exclusive offers.
-                </p>
-                
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="newsletter-email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="newsletter-email"
-                      name="newsletter-email"
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-400 focus:border-blue-400"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                  
-                  <div className="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="newsletter-consent"
-                      name="newsletter-consent"
-                      required
-                      className="h-4 w-4 text-blue-400 focus:ring-blue-300 border-gray-300 rounded"
-                    />
-                    <label htmlFor="newsletter-consent" className="ml-2 block text-sm text-gray-700">
-                      I agree to receive marketing communications
-                    </label>
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 font-medium"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-                
-                <p className="mt-4 text-gray-500 text-xs">
-                  You can unsubscribe at any time. We respect your privacy.
-                </p>
-              </div>
-            </div>
           </div>
+          
         </div>
+        
+      </div>
+      <div>
+          <Map
+          center={officeLocation}
+          markers={[
+            {
+              position: officeLocation,
+              title: 'Head Office',
+              description: 'Main headquarters',
+              icon: 'office',
+            },
+            ...branchLocations,
+          ]}
+          className="h-[500px]" />
       </div>
     </div>
   );

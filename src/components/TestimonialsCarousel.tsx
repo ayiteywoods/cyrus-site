@@ -42,7 +42,7 @@ const testimonials = [
 
 export default function TestimonialsCarousel() {
   return (
-    <div className="w-full px-4 py-12 relative">
+    <div className="w-full px-4 py-4 relative">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         loop={true}

@@ -1,6 +1,11 @@
 
 export const menuItems = [
   {
+    title: 'Home',
+    href: '/',
+    isSimpleLink: true
+  },
+  {
     title: 'About',
     href: '/about',
     isSimpleLink: true

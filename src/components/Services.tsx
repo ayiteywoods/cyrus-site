@@ -105,7 +105,7 @@ const ServicesPage: NextPage = () => {
             <span className="text-sm font-semibold uppercase tracking-wider text-blue-600">
               Our Methodology
             </span>
-            <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="mt-2 text-3xl font-thin text-gray-900 md:text-4xl">
               Specialized Lending Approaches
             </h2>
             <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-blue-400 to-blue-600"></div>

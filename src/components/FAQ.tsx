@@ -1,6 +1,7 @@
-"use client"; // Required for interactivity (since we're using useState)
+"use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 
 type FAQItem = {
   question: string;
@@ -9,6 +10,8 @@ type FAQItem = {
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [showForm, setShowForm] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const faqs: FAQItem[] = [
     {
@@ -17,66 +20,164 @@ const FAQ = () => {
     },
     {
       question: "What is the Loan Application process at CYRUS?",
-      answer: "The loan process at CYRUS involves submitting an application, undergoing a review of credit risk and financial stability, and receiving a loan decision. Detailed procedures are in place to ensure transparency and fairness.",
+      answer: "The loan process at CYRUS involves submitting an application, undergoing a review of credit risk and financial stability, and receiving a loan decision.",
     },
     {
       question: "What is your Credit underwriting process?",
-      answer: "As an MFI, CYRUS was formed with the purpose of providing social and financial solutions to the poor. To determine its vulnerability to credit risk, there is a review of the policies and procedures at every stage in the lending process to determine whether they reduce delinquencies and loan losses to an acceptable level. These policies and procedures include the loan eligibility criteria, the application review process and authorization levels, collateral or security requirements, as well as the 'carrots and sticks' used to motivate staff and compel borrowers to repay.",
+      answer: "Our underwriting involves assessing every stage of the lending process to minimize delinquencies and ensure fair lending practices.",
     },
     {
-        question: "What is your screening process?",
-        answer: "The screening process ensures that the applicants are micro borrowers. CYRUS caters for low-income clients, both the underemployed and entrepreneurs with an often informal family business (e.g., petty traders, vegetable farmers, etc.). Borrowers are typically concentrated in a limited geographic area, social segment, or entrepreneurial undertakings. Loans are very small, short-term, and unsecured, with more frequent repayments. The applicants are made to understand that the loans are purely for business and not for personal purposes such as school fees or funeral expenses. They are also made to understand that if a borrower defaults, the other members in the group become liable, hence the importance of keeping a cohesive group."
+      question: "What is your screening process?",
+      answer: "We ensure applicants are true micro-borrowers, operating small businesses like petty trading, farming, etc. Group accountability is emphasized.",
     },
     {
-        question: "How do I register?",
-        answer: "The applicants are then registered after they pass the screening stage. The details taken include names, gender, business location, residential address, occupation type, phone number, and the name of a spouse or next of kin. Two passport pictures and an ID are required for the registration."
+      question: "How do I register?",
+      answer: "Pass the screening stage, then provide personal and business details, two passport photos, and a valid ID.",
     },
     {
-        question: "What is your risk assessment process?",
-        answer: "Loan documentation is generated largely by the Loans and Operations managers through visits to the borrower's business and home. Directions to the residences are also drawn up for verification. The occupation/trade types of applicants are verified and reports sent to management for assessment. The borrower's character and willingness to repay is also assessed during field visits. Since credit bureau data are not available for low-income clients, a labor-intensive approach to credit analysis is used."
+      question: "What is your risk assessment process?",
+      answer: "We perform field visits to verify borrower’s business and residence, assess willingness to repay, and gather necessary documentation.",
     },
     {
-        question: "How does the credit approval process work?",
-        answer: "CYRUS has a highly decentralized process; hence, credit approval by the field-level staff depends heavily on the skill and integrity of loan officers and managers for accurate and timely information."
+      question: "How does the credit approval process work?",
+      answer: "Credit approval is decentralized, relying heavily on field staff and loan officers for accurate and timely information.",
     },
     {
-        question: "What training and support do approved loan application recieve?",
-        answer: "Applicants whose loans have been approved are then trained in Basic Financial Management. They are trained to distinguish between working capital and profit, in basic customer service, and to inculcate in them the habit of savings. Elementary bookkeeping is not mandatory since most of them cannot read and write. CYRUS does not request separate fees for processing transactions, particularly in relation to administrative costs involved in the visitation and monitoring of loans."
+      question: "What training and support do approved applicants receive?",
+      answer: "Approved applicants receive basic financial management training, customer service education, and saving habits reinforcement.",
     },
     {
-        question: "How do i repay my Loan?",
-        answer: "Visit our nearest office or dial 789732# for assistance with the loan repayment process."
+      question: "How do I repay my loan?",
+      answer: "Visit our nearest office or dial 789732# for support with loan repayments.",
     },
   ];
 
   const toggleAccordion = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index); // Toggle accordion
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Here you can connect to your backend (API call)
+    // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify({name, email, message}) })
+
+    // For now, just simulate a successful submission
+    setTimeout(() => {
+      setFormSubmitted(true);
+    }, 1000);
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <h2 className="text-3xl font-thin mb-6 text-center">(CYRUS) - Frequently Asked Questions</h2>
-      <div className="space-y-4">
+    <section className="max-w-7xl mx-auto p-6">
+      <h2 className="text-3xl font-thin text-center mb-10 text-blue-900">
+        (CYRUS) - Frequently Asked Questions
+      </h2>
+
+      {/* FAQ Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {faqs.map((faq, index) => (
-          <div key={index} className="border-b border-gray-200 pb-4 bg-blue-50 p-4 rounded-lg">
+          <motion.div
+            key={index}
+            className="bg-blue-50 p-6 rounded-xl shadow-md"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            viewport={{ once: true }}
+          >
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex justify-between items-center w-full text-left font-medium focus:outline-none"
+              className="flex justify-between items-center w-full text-left font-semibold text-blue-800 focus:outline-none text-lg"
             >
-              <span className="text-lg">{faq.question}</span>
-              <span className="ml-2 transform transition-transform duration-200">
+              {faq.question}
+              <span className="ml-2 text-2xl">
                 {activeIndex === index ? "−" : "+"}
               </span>
             </button>
             {activeIndex === index && (
-              <div className="mt-2 text-gray-600 bg-white p-4 rounded-md">
-                <p>{faq.answer}</p>
-              </div>
+              <motion.div
+                className="mt-4 text-gray-700 text-base bg-white p-4 rounded-md"
+                initial={{ height: 0 }}
+                animate={{ height: "auto" }}
+                transition={{ duration: 0.3 }}
+              >
+                {faq.answer}
+              </motion.div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+
+      {/* "Ask a Question" Section */}
+      <div className="mt-16 text-center">
+        <h3 className="text-2xl font-thin text-blue-800 mb-4">
+          Still have questions?
+        </h3>
+        <p className="text-gray-600 mb-6">
+          If you didn't find what you were looking for, you can ask us directly!
+        </p>
+        <button
+          onClick={() => setShowForm(!showForm)}
+          className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transform transition"
+        >
+          {showForm ? "Close Form" : "Ask a Question"}
+        </button>
+
+        {showForm && (
+          <motion.div
+            className="mt-10 max-w-2xl mx-auto p-8 rounded-3xl bg-white/20 backdrop-blur-md shadow-2xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {!formSubmitted ? (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-left text-blue-900 mb-2">Name</label>
+                  <input
+                    type="text"
+                    required
+                    className="w-full border-gray-300 rounded-lg p-3 bg-white/70 focus:border-blue-500 focus:ring-blue-500"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-left text-blue-900 mb-2">Email</label>
+                  <input
+                    type="email"
+                    required
+                    className="w-full border-gray-300 rounded-lg p-3 bg-white/70 focus:border-blue-500 focus:ring-blue-500"
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-left text-blue-900 mb-2">Question</label>
+                  <textarea
+                    required
+                    className="w-full border-gray-300 rounded-lg p-3 bg-white/70 focus:border-blue-500 focus:ring-blue-500"
+                    placeholder="Type your question here..."
+                    rows={4}
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-full hover:scale-105 transform transition"
+                >
+                  Submit Question
+                </button>
+              </form>
+            ) : (
+              <motion.div
+                className="text-green-600 text-lg font-semibold"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+              >
+                🎉 Thank you! Your question has been submitted.
+              </motion.div>
+            )}
+          </motion.div>
+        )}
+      </div>
+    </section>
   );
 };
 
