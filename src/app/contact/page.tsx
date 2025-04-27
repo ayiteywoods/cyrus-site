@@ -1,3 +1,5 @@
+'use client'
+
 import Map from '@/components/Map';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Image from 'next/image';
