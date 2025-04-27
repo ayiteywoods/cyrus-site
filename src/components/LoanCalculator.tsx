@@ -8,7 +8,6 @@ import {
   ClockIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
-import DynamicHeroIcon from './DynamicHeroIcon';
 
 interface LoanType {
   id: number;

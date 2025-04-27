@@ -58,7 +58,7 @@ const LoanTestimonials = () => {
                 </div>
               </div>
               <blockquote className="text-gray-600 mb-4">
-                "{testimonial.quote}"
+              &amp;{testimonial.quote}&amp;
               </blockquote>
               <div className="text-sm">
                 <p className="font-semibold text-gray-900">{testimonial.name}</p>

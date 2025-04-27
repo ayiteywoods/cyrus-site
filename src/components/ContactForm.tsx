@@ -40,7 +40,7 @@ export default function ContactForm() {
       {submitSuccess ? (
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
           <h3 className="text-lg font-medium text-green-800">Message Sent Successfully!</h3>
-          <p className="text-green-600 mt-1">We'll get back to you within 24 hours.</p>
+          <p className="text-green-600 mt-1">We&apos;ll get back to you within 24 hours.</p>
         </div>
       ) : (
         <>

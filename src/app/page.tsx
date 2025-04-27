@@ -8,7 +8,7 @@ import Policies from '@/components/Policies';
 import QuickLinks from '@/components/QuickLinks';
 import Support from '@/components/Support';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
-import { Goal, Handshake, ShieldCheck, BarChart2, Users, Award, Clock } from 'lucide-react';
+import { Handshake, ShieldCheck, BarChart2, Users, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import CountUp from 'react-countup';
@@ -228,7 +228,7 @@ export default function Home() {
             <h2 className="text-3xl font-thin text-blue-900 mb-4">Success Stories</h2>
             <p className="text-gray-700 max-w-2xl mx-auto">
               Businesses thrive with Cyrus Micro-Credit Solutions that deliver real results. 
-              Here's what our clients say:
+              Here&apos;s what our clients say:
             </p>
           </motion.div>
           <TestimonialsCarousel />
@@ -249,7 +249,7 @@ export default function Home() {
               Ready to take the next step?
             </h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-              Whether you need funding for your business or personal goals, we're here to help.
+              Whether you need funding for your business or personal goals, we&apos;re here to help.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.button

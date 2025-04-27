@@ -34,7 +34,7 @@ const Page = () => {
               Frequently Asked Questions
             </p>
             <h1 className="text-4xl font-bold text-blue-900 mb-4">
-              Got Questions? We've Got You Covered.
+              Got Questions? We&apos;ve Got You Covered.
             </h1>
             <p className="text-gray-700 mb-6">
               Business insights enable smart moves towards wealth & security.

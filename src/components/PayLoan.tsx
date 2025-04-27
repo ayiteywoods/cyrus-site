@@ -30,7 +30,7 @@ const PayLoan = () => {
 
             <p className='text-base md:text-lg flex gap-2 items-start'>
               <Goal className='text-orange-300 flex-shrink-0 mt-1' size={20}/>
-              <span>Loan documentation is generated largely by the Loans and Operations managers through visits to the borrower's business and home.</span>
+              <span>Loan documentation is generated largely by the Loans and Operations managers through visits to the borrower&apos;s business and home.</span>
             </p>
           </div>
           

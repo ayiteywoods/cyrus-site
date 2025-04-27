@@ -114,7 +114,7 @@ const FAQ = () => {
           Still have questions?
         </h3>
         <p className="text-gray-600 mb-6">
-          If you didn't find what you were looking for, you can ask us directly!
+          If you didn&apos;t find what you were looking for, you can ask us directly!
         </p>
         <button
           onClick={() => setShowForm(!showForm)}

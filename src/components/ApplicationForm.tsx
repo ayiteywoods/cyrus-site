@@ -69,7 +69,7 @@ const ApplicationForm = ({ job, onClose }: ApplicationFormProps) => {
       {submitSuccess ? (
         <div className='bg-green-50 border border-green-200 rounded-lg p-6 text-center'>
           <h3 className='text-xl font-semibold text-green-800 mb-2'>Application Submitted!</h3>
-          <p className='text-green-600'>Thank you for applying. We'll review your application shortly.</p>
+          <p className='text-green-600'>Thank you for applying. We&apos;ll review your application shortly.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>

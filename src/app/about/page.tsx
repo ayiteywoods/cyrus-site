@@ -33,7 +33,7 @@ const page = () => {
               <p className='pt-2 text-blue-600 font-medium'>About CMCS</p>
               <p className='pt-2 pb-4 text-gray-700'>Navigating your business growth with experience & insightful solutions.</p>
               <h1 className='pt-4 pb-4 text-3xl md:text-4xl font-bold text-gray-900'>
-                We're an award-winning microcredit services provider
+                We&apos;re an award-winning microcredit services provider
               </h1>
               <motion.button
                 whileHover={{ scale: 1.05 }}
