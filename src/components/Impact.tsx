@@ -9,10 +9,10 @@ const Impact = () => {
   return (
     <>
     <div className='pb-4'>
-        <h1 className='text-3xl '>
+        <h1 className='text-3xl text-white'>
             Impact
         </h1>
-        <p className='pr-20'>
+        <p className='pr-20 text-white'>
         Join the community of businesses and individuals who trust us to meet their financial needs.
         </p>
     </div>
