@@ -1,7 +1,6 @@
 // app/thank-you/page.tsx
 'use client'
 
-import { useEffect } from 'react'
 import Link from 'next/link'
 import { CheckCircle } from 'lucide-react'
 

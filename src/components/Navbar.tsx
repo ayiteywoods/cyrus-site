@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChevronDown, ChevronUp, Search, X, Menu } from 'lucide-react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+
 
 type MenuItem = {
   title: string;
