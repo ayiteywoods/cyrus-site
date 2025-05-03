@@ -35,7 +35,7 @@ export default function ContactPage() {
       } else {
         setErrorMessage(data.message || 'An error occurred while sending your message.');
       }
-    } catch (error) {
+    } catch {
       setErrorMessage('An error occurred while sending your message.');
     } finally {
       setIsSubmitting(false);
