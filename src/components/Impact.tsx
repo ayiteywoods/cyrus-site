@@ -60,7 +60,11 @@ const Impact = () => {
                <p>We&apos;ve experienced more than 10+ years with success.</p>
           </div>
          
+<<<<<<< HEAD
              <Image src='/imp1.jpeg' alt='c1' width={150} height={80}/>
+=======
+             <Image src='/imp1.jpeg' alt='Impact1' width={150} height={80}/>
+>>>>>>> c45047d24c4593e0364e70f43d60f2663a75d02a
          
         </motion.div>
         <motion.div 
@@ -74,7 +78,11 @@ className='rounded-xl shadow-md bg-white flex gap-2'>
         <p>We achieve a lot for our work from top certified agencies.</p>
     </div>
   
+<<<<<<< HEAD
     <Image src='/imp2.jpeg' alt='c2' width={150} height={80}/>
+=======
+    <Image src='/imp2.jpeg' alt='Impact2' width={150} height={80}/>
+>>>>>>> c45047d24c4593e0364e70f43d60f2663a75d02a
    
 </motion.div>
 
@@ -89,7 +97,11 @@ className='rounded-xl shadow-md bg-white flex gap-2'>
         <p>We&apos;ve made clients happy all over the world.</p>
     </div>
     
+<<<<<<< HEAD
     <Image src='/imp3.jpeg' alt='c3' width={150} height={80}/>
+=======
+    <Image src='/imp3.jpeg' alt='Impact3' width={150} height={80}/>
+>>>>>>> c45047d24c4593e0364e70f43d60f2663a75d02a
     
 </motion.div>
 </div>
