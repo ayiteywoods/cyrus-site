@@ -46,7 +46,6 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
-  const [menuOffsetLeft, setMenuOffsetLeft] = useState(0);
   const navbarRef = useRef<HTMLDivElement>(null);
   const menuItemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const router = useRouter();
@@ -62,15 +61,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  useEffect(() => {
-    if (activeMenu && menuItemRefs.current[activeMenu]) {
-      const offset = menuItemRefs.current[activeMenu]?.offsetLeft || 0;
-      setMenuOffsetLeft(offset);
-    }
-  }, [activeMenu]);
-
   const toggleMenu = (title: string) => {
-    setActiveMenu((prev) => (prev === title ? null : title));
+    setActiveMenu(activeMenu === title ? null : title);
   };
 
   const toggleMobileMenu = () => {
