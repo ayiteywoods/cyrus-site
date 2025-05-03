@@ -1,51 +1,64 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
-import Image from 'next/image'
-
-const Map = dynamic(() => import('@/components/Map'), {
-  ssr: false,
-  loading: () => (
-    <div className="h-[500px] flex items-center justify-center bg-gray-100">
-      <p>Loading map...</p>
-    </div>
-  )
-})
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ContactPage() {
-  const officeLocation: [number, number] = [5.6037, -0.1870]
-  const branchLocations = [
-    {
-      position: [5.6137, -0.1770] as [number, number],
-      title: 'Kumasi Branch',
-      description: 'Open Mon-Fri: 8:30AM - 5:00PM',
-      icon: 'office' as const,
-    },
-    {
-      position: [5.5537, -0.2070] as [number, number],
-      title: 'Tema Branch',
-      icon: 'office' as const,
-    },
-  ]
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const formValues = Object.fromEntries(formData.entries());
+
+    setIsSubmitting(true);
+    setSuccessMessage('');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formValues),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccessMessage('Your message has been sent successfully!');
+      } else {
+        setErrorMessage(data.message || 'An error occurred while sending your message.');
+      }
+    } catch (error) {
+      setErrorMessage('An error occurred while sending your message.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <div className='bg-blue-900 max-w-full relative h-[400px]'>
-        <Image 
-          src='/slider3.jpg' 
-          alt='bg' 
-          fill 
-          className='object-cover'
+      <div className="bg-blue-900 max-w-full relative h-[400px]">
+        <Image
+          src="/slider3.jpg"
+          alt="bg"
+          fill
+          className="object-cover"
           priority
         />
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 h-full flex items-center'>
-          <div className='rounded-lg bg-white p-8 opacity-90 max-w-2xl'>
-            <p className='pt-2 text-blue-400'>Contact Us</p>
-            <p className='pt-2 pb-4'>We&apos;ll gladly answer any of your questions.</p>
-            <h1 className='pt-4 pb-4 text-3xl'>Get in touch with us! We are here to Help!</h1>
-            <button className='px-6 py-3 rounded-lg text-white bg-blue-400 hover:bg-blue-500 transition-colors'>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 h-full flex items-center">
+          <div className="rounded-lg bg-white p-8 opacity-90 max-w-2xl">
+            <p className="pt-2 text-blue-400">Contact Us</p>
+            <p className="pt-2 pb-4">We&apos;ll gladly answer any of your questions.</p>
+            <h1 className="pt-4 pb-4 text-3xl">Get in touch with us! We are here to Help!</h1>
+            <button className="px-6 py-3 rounded-lg text-white bg-blue-400 hover:bg-blue-500 transition-colors">
               GET IN TOUCH
             </button>
           </div>
@@ -57,6 +70,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Methods */}
           <div className="lg:col-span-1 space-y-6">
+            {/* Phone Support */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -86,6 +100,7 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* Email Us */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -94,14 +109,15 @@ export default function ContactPage() {
                 <h3 className="text-xl font-thin">Email Us</h3>
               </div>
               <p className="text-gray-600 mb-4">Send us an email and we&apos;ll get back to you shortly</p>
-              <a 
-                href="mailto:info@cyrusmcs.com" 
+              <a
+                href="mailto:info@cyrusmcs.com"
                 className="text-blue-400 font-medium hover:underline inline-block"
               >
                 info@cyrusmcs.com
               </a>
             </div>
 
+            {/* Branch Locations */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -114,7 +130,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-medium">Head Office</h4>
                   <p className="text-gray-600">Ground Floor, Leonardo Hotel Opposite Tema</p>
-                  <p className='text-gray-600'>Newtown Post Office, P.O.Box rvt 636, Tema</p>
+                  <p className="text-gray-600">Newtown Post Office, P.O.Box rvt 636, Tema</p>
                   <p className="text-orange-500 text-sm mt-1">Monday - Friday: 8:30 AM - 4:00 PM</p>
                 </div>
               </div>
@@ -125,7 +141,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
               <h2 className="text-2xl font-thin mb-6">Send us a message</h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -219,32 +235,26 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-medium"
+                  className="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
+              {successMessage && (
+                <div className="mt-4 text-green-500">
+                  <p>{successMessage}</p>
+                </div>
+              )}
+              {errorMessage && (
+                <div className="mt-4 text-red-500">
+                  <p>{errorMessage}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Map Section */}
-      <div className="w-full">
-        <Map
-          center={officeLocation}
-          markers={[
-            {
-              position: officeLocation,
-              title: 'Head Office',
-              description: 'Main headquarters',
-              icon: 'office',
-            },
-            ...branchLocations,
-          ]}
-          className="h-[500px] w-full"
-        />
-      </div>
     </div>
-  )
+  );
 }

@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import type { NextPage } from 'next';
+import Link from 'next/link';
 
 interface ServiceCardProps {
   title: string;
@@ -17,6 +19,11 @@ const ServiceCard = ({ title, description, image, features }: ServiceCardProps) 
           alt={title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/images/placeholder.jpg'; // Fallback image
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent" />
       </div>
@@ -41,12 +48,12 @@ const ServiceCard = ({ title, description, image, features }: ServiceCardProps) 
   );
 };
 
-const ServicesPage: NextPage = () => {
+export default function ServicesContent() {
   const services: ServiceCardProps[] = [
     {
       title: "Use of Collateral",
       description: "CYRUS borrowers lack collateral traditionally required by banks, and hence social collateral is used as leverage to induce payment. In this case, underwriting depends on a labour-intensive analysis of the household's repayment capacity and the borrower's character.",
-      image: "/images/s1.jpg",
+      image: "/slider1.jpg",
       features: [
         "Social collateral model",
         "Repayment capacity analysis",
@@ -57,7 +64,7 @@ const ServicesPage: NextPage = () => {
     {
       title: "Progressively Increasing Lending",
       description: "CYRUS customers have limited access to other financing and are dependent upon ongoing access to CYRUS' credit. CYRUS uses incentive schemes to reward good borrowers with preferential access to future, larger loans.",
-      image: "/images/s3.jpg",
+      image: "/slider3.jpg",
       features: [
         "Incentive-based lending",
         "Credit access rewards",
@@ -68,7 +75,7 @@ const ServicesPage: NextPage = () => {
     {
       title: "Controlling Arrears",
       description: "Strict control of arrears is employed by CYRUS given the short-term nature of the loans, lack of collateral, and high frequency of payments (e.g., weekly or bi-weekly).",
-      image: "/images/s2.jpg",
+      image: "/slider2.jpg",
       features: [
         "Short-term loan structure",
         "High-frequency repayment",
@@ -79,25 +86,7 @@ const ServicesPage: NextPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative bg-blue-900 py-24 rounded-lg">
-        <div className="absolute inset-0 overflow-hidden opacity-60">
-          <Image
-            src="/images/s1.jpg"
-            alt="Financial services background"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="container relative mx-auto px-4 text-center ">
-          <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl">Our Unique Financial Solutions</h1>
-          <p className="mx-auto max-w-2xl text-xl text-blue-100">
-            Innovative approaches tailored for borrowers with limited traditional collateral
-          </p>
-        </div>
-      </section>
-
+    <div className="bg-gray-50">
       {/* Services Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -125,10 +114,15 @@ const ServicesPage: NextPage = () => {
           <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-12 text-center shadow-lg">
             <div className="absolute inset-0 opacity-10">
               <Image
-                src="/images/pattern.svg"
+                src="/slider4.jpg"
                 alt="Pattern background"
                 fill
                 className="object-cover"
+                sizes="100vw"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/images/placeholder.jpg'; // Fallback image
+                }}
               />
             </div>
             <div className="relative z-10">
@@ -138,15 +132,15 @@ const ServicesPage: NextPage = () => {
               <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
                 Contact us to learn how our collateral alternatives can work for you
               </p>
-              <button className="rounded-lg bg-white px-8 py-3 font-medium text-blue-600 transition-all hover:bg-gray-100 hover:shadow-lg">
-                Schedule a Consultation
-              </button>
+              <Link href="/contact" className="inline-block">
+                <button className="rounded-lg bg-white px-8 py-3 font-medium text-blue-600 transition-all hover:bg-gray-100 hover:shadow-lg">
+                  Schedule a Consultation
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
     </div>
   );
-};
-
-export default ServicesPage;
+} 

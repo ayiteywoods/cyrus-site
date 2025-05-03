@@ -1,5 +1,6 @@
 import { Goal } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const PayLoan = () => {
@@ -35,9 +36,11 @@ const PayLoan = () => {
           </div>
           
           <div className='mt-6 text-center lg:text-left'>
+            <Link href="/about" passHref>
             <button className='text-white rounded-xl bg-blue-400 hover:bg-blue-500 px-6 py-3 transition-colors duration-300'>
               More About Us
             </button>
+            </Link>
           </div>
         </div>
         

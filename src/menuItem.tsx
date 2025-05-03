@@ -1,42 +1,14 @@
 
 export const menuItems = [
-  {
-    title: 'Home',
-    href: '/',
-    isSimpleLink: true
-  },
-  {
-    title: 'About',
-    href: '/about',
-    isSimpleLink: true
-  },
-  {
-    title: 'Loans',
-    href: '/loans',
-   
-    isSimpleLink: true
-  },
-  {
-    title: 'Careers',
-    href: '/careers',
-   isSimpleLink: true
-  },
-  {
-    title: 'Services',
-    href: '/services',
-    isSimpleLink: true
-  },
-  {
-    title: 'Contact',
-    href: '/contact',
-    isSimpleLink: true
-  },
-  {
-    title: 'FAQs',
-    href: '/faq', // No submenu (simple link)
-    isSimpleLink: true // This will render as a simple link
-  },
+  { title: 'Home', href: '/', isSimpleLink: true },
+  { title: 'About', href: '/about', isSimpleLink: true },
+  { title: 'Loans', href: '/loans', isSimpleLink: true },
+  { title: 'Careers', href: '/careers', isSimpleLink: true },
+  { title: 'Services', href: '/services', isSimpleLink: true },
+  { title: 'Contact', href: '/contact', isSimpleLink: true },
+  { title: 'FAQs', href: '/faq', isSimpleLink: true }
 ];
+
 
 {/*submenu: [
       {

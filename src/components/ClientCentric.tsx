@@ -12,7 +12,7 @@ const ClientCentric = () => {
         
     </div>
     
-    <div className='grid md:grid-cols-4 grid-cols-1 justify-between gap-8'>
+    <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-8'>
         <motion.div 
         initial={{ opacity: 0 }}
         whileHover={{ scale:1.1 }}
@@ -50,18 +50,7 @@ const ClientCentric = () => {
             </div>
         </motion.div>
 
-        <motion.div 
-        initial={{ opacity: 0 }}
-        whileHover={{ scale:1.1 }}
-        whileTap={{ scale:1 }}
-        whileInView={{ opacity: 1 }}
-        className='shadow bg-white'>
-        <Image src='/c3.webp' alt="c1" width={400} height={50}/>
-        <div className='p-6 text-center'>
-        <h1 className='text-xl font-semibold '>Services targeted for the Poor</h1>
-        <p>Easy and efficient loan applications with no hidden fees.</p>
-            </div>
-        </motion.div>
+       
     </div>
     </>
   )

@@ -84,7 +84,7 @@ className='rounded-xl shadow-md bg-white flex gap-2'>
                     whileTap={{ scale:1 }}
                     whileInView={{ opacity: 1 }}  
                     className='rounded-xl shadow-md bg-white flex gap-2'>
-    <div className='p-4 py-8'>
+    <div className='p-6'>
         <h1 className='text-3xl font-semibold '><CountUp end={100}/>+</h1>
         <p>We&apos;ve made clients happy all over the world.</p>
     </div>

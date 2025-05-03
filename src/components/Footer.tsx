@@ -27,11 +27,7 @@ type SocialLink = {
 };
 
 const Footer = () => {
-  const [year, setYear] = useState<number | null>(null);
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const currentYear = 2024; // Static year value
 
   const footerColumns: FooterColumn[] = [
     { 
@@ -144,7 +140,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-center gap-4">
           <div>
             <p className="text-gray-400 text-sm">
-              © {year ?? '2024'} Cyrus MicroCredit Ghana. All rights reserved.
+              © {currentYear} Cyrus MicroCredit Ghana. All rights reserved.
             </p>
           </div>
 

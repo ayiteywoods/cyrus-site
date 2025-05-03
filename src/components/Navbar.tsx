@@ -2,7 +2,10 @@
 
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { ChevronDown, ChevronUp, Search, X, Menu } from 'lucide-react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 type MenuItem = {
   title: string;
@@ -16,7 +19,7 @@ type MenuItem = {
       icon?: React.ReactNode;
     }[];
   }[];
-  isSimpleLink?: boolean; // New prop to identify simple links like FAQ
+  isSimpleLink?: boolean;
 };
 
 type NavbarProps = {
@@ -24,15 +27,31 @@ type NavbarProps = {
   menuItems: MenuItem[];
 };
 
+const searchableContent = [
+  { keyword: 'about', path: '/about' },
+  { keyword: 'contact', path: '/contact' },
+  { keyword: 'web design', path: '/services/web-design' },
+  { keyword: 'seo optimization', path: '/services/seo' },
+  { keyword: 'branding strategy', path: '/services/branding' },
+  { keyword: 'pricing', path: '/pricing' },
+  { keyword: 'blog', path: '/blog' },
+  { keyword: 'team', path: '/about#team' },
+  { keyword: 'careers', path: '/careers' },
+  { keyword: 'loans', path: '/loans' },
+  { keyword: 'services', path: '/services' },
+  { keyword: 'getting started guide', path: '/blog/getting-started' },
+];
+
 export default function Navbar({ logo, menuItems }: NavbarProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
+  const [menuOffsetLeft, setMenuOffsetLeft] = useState(0);
   const navbarRef = useRef<HTMLDivElement>(null);
   const menuItemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const router = useRouter();
 
-  // Close menus when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
@@ -40,27 +59,41 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
         setMobileMenuOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (activeMenu && menuItemRefs.current[activeMenu]) {
+      const offset = menuItemRefs.current[activeMenu]?.offsetLeft || 0;
+      setMenuOffsetLeft(offset);
+    }
+  }, [activeMenu]);
+
   const toggleMenu = (title: string) => {
-    setActiveMenu(activeMenu === title ? null : title);
+    setActiveMenu((prev) => (prev === title ? null : title));
   };
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-    if (mobileMenuOpen) {
-      setActiveMenu(null);
-    }
+    setMobileMenuOpen((prev) => !prev);
+    if (mobileMenuOpen) setActiveMenu(null);
   };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Searching for:', searchQuery);
+    if (!searchQuery.trim()) return;
+
+    const cleanedQuery = searchQuery.trim().toLowerCase();
+    const match = searchableContent.find((item) =>
+      item.keyword.toLowerCase().includes(cleanedQuery)
+    );
+
+    if (match) {
+      router.push(match.path);
+    } else {
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+    }
+
     setSearchQuery('');
     setShowSearch(false);
   };
@@ -68,8 +101,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100" ref={navbarRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Logo and Mobile Menu Button */}
+        <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <button
               onClick={toggleMobileMenu}
@@ -83,101 +115,68 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
             </Link>
           </div>
 
-          {/* Desktop Menu Items */}
           <div className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => (
-              <div 
-                key={item.title} 
+              <div
+                key={item.title}
                 className="relative"
                 ref={(el) => {
                   menuItemRefs.current[item.title] = el;
                 }}
               >
                 {item.isSimpleLink ? (
-                  // Render as simple link (for FAQ)
                   <Link
                     href={item.href}
-                    className={`px-4 py-5 text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium ${
-                      activeMenu === item.title ? 'text-blue-600' : ''
-                    }`}
+                    className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium dark:text-white dark:hover:text-blue-400"
                   >
                     {item.title}
                   </Link>
                 ) : (
-                  <>
-                    {/* Render as dropdown toggle */}
-                    <button
-                      onClick={() => toggleMenu(item.title)}
-                      className={`flex items-center px-4 py-5 text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium ${
-                        activeMenu === item.title ? 'text-blue-600' : ''
-                      }`}
-                    >
-                      {item.title}
-                      {activeMenu === item.title ? (
-                        <ChevronUp className="ml-1 h-4 w-4" />
-                      ) : (
-                        <ChevronDown className="ml-1 h-4 w-4" />
-                      )}
-                    </button>
-
-                    {/* Mega Dropdown */}
-                    {activeMenu === item.title && item.submenu && (
-                      <div className="fixed left-0 right-0 bg-white shadow-lg border-t border-gray-200 py-6 z-50">
-                        <div 
-                          className="mx-auto px-8"
-                          style={{
-                            marginLeft: `${menuItemRefs.current[item.title]?.offsetLeft}px`,
-                            maxWidth: `calc(100vw - ${menuItemRefs.current[item.title]?.offsetLeft || 0}px)`,
-                            width: '100vw'
-                          }}
-                        >
-                          <div className="grid grid-cols-4 gap-8">
-                            {item.submenu.map((submenu, index) => (
-                              <div key={index} className="space-y-4">
-                                {submenu.title && (
-                                  <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                                    {submenu.title}
-                                  </h3>
-                                )}
-                                <div className="space-y-3">
-                                  {submenu.items.map((subItem) => (
-                                    <Link
-                                      key={subItem.title}
-                                      href={subItem.href}
-                                      className="group flex items-start p-2 hover:bg-gray-50 rounded transition-colors duration-200"
-                                    >
-                                      {subItem.icon && (
-                                        <div className="flex-shrink-0 h-6 w-6 text-blue-600 mr-3 mt-1">
-                                          {subItem.icon}
-                                        </div>
-                                      )}
-                                      <div>
-                                        <p className="text-base font-medium text-gray-900 group-hover:text-blue-600">
-                                          {subItem.title}
-                                        </p>
-                                        {subItem.description && (
-                                          <p className="text-sm text-gray-500 mt-1">
-                                            {subItem.description}
-                                          </p>
-                                        )}
-                                      </div>
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                  <button
+                    onClick={() => toggleMenu(item.title)}
+                    className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium flex items-center dark:text-white dark:hover:text-blue-400"
+                  >
+                    {item.title}
+                    {activeMenu === item.title ? (
+                      <ChevronUp className="ml-1 h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="ml-1 h-4 w-4" />
                     )}
-                  </>
+                  </button>
+                )}
+
+                {activeMenu === item.title && item.submenu && (
+                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 dark:bg-gray-800 dark:ring-gray-700">
+                    <div className="py-1">
+                      {item.submenu.map((submenu, index) => (
+                        <div key={index}>
+                          {submenu.title && (
+                            <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider px-4 py-2 dark:text-gray-400">
+                              {submenu.title}
+                            </h4>
+                          )}
+                          <ul>
+                            {submenu.items.map((subItem) => (
+                              <li key={subItem.title}>
+                                <Link
+                                  href={subItem.href}
+                                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-blue-400"
+                                >
+                                  {subItem.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
             ))}
           </div>
 
-          {/* Search Box */}
-          <div className="flex items-center">
+          <div className="relative flex items-center">
             {showSearch ? (
               <form onSubmit={handleSearch} className="relative">
                 <input
@@ -206,16 +205,15 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white py-4 border-t border-gray-200">
+          <div className="md:hidden bg-white dark:bg-gray-900 py-4 border-t border-gray-200 dark:border-gray-700">
             <div className="space-y-2 px-4">
               {menuItems.map((item) => (
-                <div key={item.title} className="border-b border-gray-100 pb-2">
+                <div key={item.title} className="border-b border-gray-100 dark:border-gray-700 pb-2">
                   {item.isSimpleLink ? (
                     <Link
                       href={item.href}
-                      className="block py-2 text-gray-700 hover:text-blue-600 font-medium"
+                      className="block py-2 text-gray-900 hover:text-blue-600 font-medium dark:text-gray-100 dark:hover:text-blue-400"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.title}
@@ -224,7 +222,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                     <>
                       <button
                         onClick={() => toggleMenu(item.title)}
-                        className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-blue-600 font-medium"
+                        className="flex items-center justify-between w-full py-2 text-gray-900 hover:text-blue-600 font-medium dark:text-gray-100 dark:hover:text-blue-400"
                       >
                         {item.title}
                         {activeMenu === item.title ? (
@@ -234,13 +232,12 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                         )}
                       </button>
 
-                      {/* Mobile Submenu */}
                       {activeMenu === item.title && item.submenu && (
                         <div className="pl-4 mt-2 space-y-3">
                           {item.submenu.map((submenu, index) => (
                             <div key={index}>
                               {submenu.title && (
-                                <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                                <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2 dark:text-gray-300">
                                   {submenu.title}
                                 </h4>
                               )}
@@ -249,7 +246,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                                   <li key={subItem.title}>
                                     <Link
                                       href={subItem.href}
-                                      className="block py-1 text-gray-600 hover:text-blue-600"
+                                      className="block py-1 text-gray-800 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
                                       onClick={() => setMobileMenuOpen(false)}
                                     >
                                       {subItem.title}

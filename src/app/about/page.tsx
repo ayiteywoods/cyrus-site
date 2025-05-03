@@ -8,6 +8,7 @@ import CountUp from 'react-countup'
 import { motion } from 'framer-motion'
 import Testimonials from '@/components/Testimonials'
 import TeamSection from '@/components/TeamSection'
+import Link from 'next/link'
 
 const page = () => {
   return (
@@ -35,6 +36,7 @@ const page = () => {
               <h1 className='pt-4 pb-4 text-3xl md:text-4xl font-bold text-gray-900'>
                 We&apos;re an award-winning microcredit services provider
               </h1>
+              <Link href="/contact" passHref>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -42,6 +44,7 @@ const page = () => {
               >
                 GET IN TOUCH
               </motion.button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -242,9 +245,7 @@ const page = () => {
                 <div className='p-6'>
                   <h3 className='text-xl font-bold text-blue-900 mb-2'>{service.title}</h3>
                   <p className='text-gray-700'>{service.description}</p>
-                  <button className='mt-4 text-blue-500 font-medium hover:text-blue-700 transition-colors'>
-                    Learn more →
-                  </button>
+                
                 </div>
               </motion.div>
             ))}
@@ -291,6 +292,7 @@ const page = () => {
               Join thousands of satisfied clients who have transformed their financial future with our services.
             </p>
             <div className='flex flex-col sm:flex-row justify-center gap-4'>
+              <Link href="/loans" passHref>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -298,6 +300,8 @@ const page = () => {
               >
                 GET STARTED
               </motion.button>
+              </Link>
+              <Link href="/contact" passHref>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -305,6 +309,7 @@ const page = () => {
               >
                 CONTACT US
               </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>

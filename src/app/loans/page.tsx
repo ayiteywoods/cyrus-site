@@ -7,6 +7,7 @@ import DynamicHeroIcon from '@/components/DynamicHeroIcon';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface LoanType {
   id: number;
@@ -104,9 +105,11 @@ const Page = () => {
               <p className='pt-2 text-blue-600 font-medium'>Apply for Loans</p>
               <p className='pt-2 pb-4 text-gray-700'>Choose your ideal plan. No obligation, cancel anytime.</p>
               <h1 className='pt-4 pb-4 text-3xl font-bold'>Financial Solutions Tailored for You</h1>
+              <Link href="/loans" passHref>
               <button className='px-6 py-3 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors'>
                 APPLY NOW
               </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -207,9 +210,11 @@ const Page = () => {
             <p className='text-center text-blue-100'>
               Our financial experts will create a personalized plan for your unique needs
             </p>
+            <Link href="/contact" passHref>
             <button className='w-full max-w-xs rounded-lg bg-white px-6 py-3 text-blue-600 font-medium hover:bg-gray-100 transition-colors'>
               SPEAK WITH AN ADVISOR
             </button>
+            </Link>
           </motion.div>
 
           <div className='border border-gray-200 rounded-lg p-6 shadow-sm'>

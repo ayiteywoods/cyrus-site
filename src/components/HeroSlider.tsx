@@ -22,10 +22,10 @@ export default function HeroSlider() {
     {
       id: 1,
       image: '/slider11.jpg',
-      title: 'Digital Banking Made Easy',
+      title: 'Simplified Lending',
       subtitle: 'Access your accounts anytime, anywhere with our secure platform',
       ctaText: 'Get Started',
-      ctaLink: '#digital-banking'
+      ctaLink: '/loans'
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ export default function HeroSlider() {
       title: 'Personal Loans',
       subtitle: 'Competitive rates for all your financial needs',
       ctaText: 'Apply Now',
-      ctaLink: '#loans'
+      ctaLink: '/loans'
     },
     {
       id: 3,
@@ -41,15 +41,15 @@ export default function HeroSlider() {
       title: 'Business Solutions',
       subtitle: 'Tailored banking for your business growth',
       ctaText: 'Explore',
-      ctaLink: '#business'
+      ctaLink: '/services'
     },
     {
         id: 4,
         image: '/slider4.jpg',
-        title: 'Business Solutions',
+        title: 'Convenience, Product Affordability, Ease of Service',
         subtitle: 'Tailored banking for your business growth',
         ctaText: 'Explore',
-        ctaLink: '#business'
+        ctaLink: '/services'
       }
   ]
 
