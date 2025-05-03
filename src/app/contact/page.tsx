@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin} from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -40,7 +40,7 @@ export default function ContactPage() {
       });
       
       alert('Message sent successfully!');
-    } catch (err) {
+    } catch {
       alert('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
