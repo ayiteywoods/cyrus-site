@@ -48,7 +48,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
   const navbarRef = useRef<HTMLDivElement>(null);
   const menuItemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const router = useRouter();
-  const pathname = usePathname(); // ✅ Get current path
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -109,7 +109,6 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
           <div className="hidden md:flex items-center space-x-1">
             {menuItems.map((item) => {
               const isActive = pathname === item.href;
-
               return (
                 <div
                   key={item.title}
@@ -121,8 +120,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                   {item.isSimpleLink ? (
                     <Link
                       href={item.href}
-                      className={`px-4 py-2 font-medium dark:text-white dark:hover:text-blue-400 hover:text-blue-600 ${
-                        isActive ? 'text-blue-400' : 'text-gray-800'
+                      className={`px-4 py-2 font-medium hover:text-blue-600 ${
+                        isActive ? 'text-blue-500' : 'text-gray-800'
                       }`}
                     >
                       {item.title}
@@ -130,8 +129,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                   ) : (
                     <button
                       onClick={() => toggleMenu(item.title)}
-                      className={`px-4 py-2 font-medium flex items-center dark:text-white dark:hover:text-blue-400 hover:text-blue-600 ${
-                        isActive ? 'text-blue-400' : 'text-gray-800'
+                      className={`px-4 py-2 font-medium flex items-center hover:text-blue-600 ${
+                        isActive ? 'text-blue-500' : 'text-gray-800'
                       }`}
                     >
                       {item.title}
@@ -144,12 +143,12 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                   )}
 
                   {activeMenu === item.title && item.submenu && (
-                    <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 dark:bg-gray-800 dark:ring-gray-700">
+                    <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                       <div className="py-1">
                         {item.submenu.map((submenu, index) => (
                           <div key={index}>
                             {submenu.title && (
-                              <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider px-4 py-2 dark:text-gray-400">
+                              <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider px-4 py-2">
                                 {submenu.title}
                               </h4>
                             )}
@@ -160,10 +159,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                                   <li key={subItem.title}>
                                     <Link
                                       href={subItem.href}
-                                      className={`block px-4 py-2 hover:bg-gray-100 hover:text-blue-600 dark:hover:bg-gray-700 ${
-                                        isSubActive
-                                          ? 'text-blue-400 dark:text-blue-400'
-                                          : 'text-gray-700 dark:text-gray-200'
+                                      className={`block px-4 py-2 hover:bg-gray-100 hover:text-blue-600 ${
+                                        isSubActive ? 'text-blue-500' : 'text-gray-700'
                                       }`}
                                     >
                                       {subItem.title}
@@ -218,17 +215,17 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 py-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="md:hidden bg-white text-gray-900 py-4 border-t border-gray-200">
             <div className="space-y-2 px-4">
               {menuItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
-                  <div key={item.title} className="border-b border-gray-100 dark:border-gray-700 pb-2">
+                  <div key={item.title} className="border-b border-gray-100 pb-2">
                     {item.isSimpleLink ? (
                       <Link
                         href={item.href}
-                        className={`block py-2 font-medium dark:text-gray-100 dark:hover:text-blue-400 hover:text-blue-600 ${
-                          isActive ? 'text-blue-400' : 'text-gray-900'
+                        className={`block py-2 font-medium text-gray-900 hover:text-blue-600 ${
+                          isActive ? 'text-blue-500' : ''
                         }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
@@ -238,8 +235,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                       <>
                         <button
                           onClick={() => toggleMenu(item.title)}
-                          className={`flex items-center justify-between w-full py-2 font-medium dark:text-gray-100 dark:hover:text-blue-400 hover:text-blue-600 ${
-                            isActive ? 'text-blue-400' : 'text-gray-900'
+                          className={`flex items-center justify-between w-full py-2 font-medium text-gray-900 hover:text-blue-600 ${
+                            isActive ? 'text-blue-500' : ''
                           }`}
                         >
                           {item.title}
@@ -255,7 +252,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                             {item.submenu.map((submenu, index) => (
                               <div key={index}>
                                 {submenu.title && (
-                                  <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2 dark:text-gray-300">
+                                  <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2">
                                     {submenu.title}
                                   </h4>
                                 )}
@@ -266,10 +263,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                                       <li key={subItem.title}>
                                         <Link
                                           href={subItem.href}
-                                          className={`block py-1 hover:text-blue-600 dark:hover:text-blue-400 ${
-                                            isSubActive
-                                              ? 'text-blue-400 dark:text-blue-400'
-                                              : 'text-gray-800 dark:text-gray-200'
+                                          className={`block py-1 text-gray-800 hover:text-blue-600 ${
+                                            isSubActive ? 'text-blue-500' : ''
                                           }`}
                                           onClick={() => setMobileMenuOpen(false)}
                                         >

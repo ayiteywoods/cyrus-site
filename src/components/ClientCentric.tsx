@@ -19,7 +19,10 @@ const ClientCentric = () => {
         whileTap={{ scale:1 }}
         whileInView={{ opacity: 1 }}
         className='shadow bg-white'>
-        <Image src='/c1.webp' alt="c1" width={400} height={50}/>
+        <Image src='/c1.webp' alt="c1" width={0} 
+      height={0} 
+      sizes="100vw"
+      className="w-full h-auto"/>
         <div className='p-6 text-center'>
                 <h1 className='text-xl font-semibold '>Optimize Template</h1>
                 <p>We offer tailored microcredit services to help you grow financially.</p>
@@ -31,7 +34,10 @@ const ClientCentric = () => {
         whileTap={{ scale:1 }}
         whileInView={{ opacity: 1 }} 
         className='shadow bg-white'>
-        <Image src='/c2.webp' alt="c1" width={400} height={50}/>
+        <Image src='/c2.webp' alt="c1" width={0} 
+      height={0} 
+      sizes="100vw"
+      className="w-full h-auto"/>
         <div className='p-6 text-center'>
         <h1 className='text-xl font-semibold '>Convenience</h1>
         <p>Our experienced team provides actionable plans and insights to ensure your success.</p>
@@ -43,7 +49,10 @@ const ClientCentric = () => {
         whileTap={{ scale:1 }}
         whileInView={{ opacity: 1 }}
         className='shadow bg-white'>
-        <Image src='/c3.webp' alt="c1" width={400} height={50}/>
+        <Image src='/c3.webp' alt="c1" width={0} 
+      height={0} 
+      sizes="100vw"
+      className="w-full h-auto"/>
         <div className='p-6 text-center'>
         <h1 className='text-xl font-semibold '>Services targeted for the Poor</h1>
         <p>Easy and efficient loan applications with no hidden fees.</p>
