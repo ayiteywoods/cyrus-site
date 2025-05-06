@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { ChevronDown, ChevronUp, Search, X, Menu } from 'lucide-react';
-
 
 type MenuItem = {
   title: string;
@@ -49,6 +48,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
   const navbarRef = useRef<HTMLDivElement>(null);
   const menuItemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const router = useRouter();
+  const pathname = usePathname(); // ✅ Get current path
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -107,64 +107,79 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
           </div>
 
           <div className="hidden md:flex items-center space-x-1">
-            {menuItems.map((item) => (
-              <div
-                key={item.title}
-                className="relative"
-                ref={(el) => {
-                  menuItemRefs.current[item.title] = el;
-                }}
-              >
-                {item.isSimpleLink ? (
-                  <Link
-                    href={item.href}
-                    className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium dark:text-white dark:hover:text-blue-400"
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <button
-                    onClick={() => toggleMenu(item.title)}
-                    className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium flex items-center dark:text-white dark:hover:text-blue-400"
-                  >
-                    {item.title}
-                    {activeMenu === item.title ? (
-                      <ChevronUp className="ml-1 h-4 w-4" />
-                    ) : (
-                      <ChevronDown className="ml-1 h-4 w-4" />
-                    )}
-                  </button>
-                )}
+            {menuItems.map((item) => {
+              const isActive = pathname === item.href;
 
-                {activeMenu === item.title && item.submenu && (
-                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 dark:bg-gray-800 dark:ring-gray-700">
-                    <div className="py-1">
-                      {item.submenu.map((submenu, index) => (
-                        <div key={index}>
-                          {submenu.title && (
-                            <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider px-4 py-2 dark:text-gray-400">
-                              {submenu.title}
-                            </h4>
-                          )}
-                          <ul>
-                            {submenu.items.map((subItem) => (
-                              <li key={subItem.title}>
-                                <Link
-                                  href={subItem.href}
-                                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-200 dark:hover:bg-gray-700 dark:hover:text-blue-400"
-                                >
-                                  {subItem.title}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+              return (
+                <div
+                  key={item.title}
+                  className="relative"
+                  ref={(el) => {
+                    menuItemRefs.current[item.title] = el;
+                  }}
+                >
+                  {item.isSimpleLink ? (
+                    <Link
+                      href={item.href}
+                      className={`px-4 py-2 font-medium dark:text-white dark:hover:text-blue-400 hover:text-blue-600 ${
+                        isActive ? 'text-blue-400' : 'text-gray-800'
+                      }`}
+                    >
+                      {item.title}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => toggleMenu(item.title)}
+                      className={`px-4 py-2 font-medium flex items-center dark:text-white dark:hover:text-blue-400 hover:text-blue-600 ${
+                        isActive ? 'text-blue-400' : 'text-gray-800'
+                      }`}
+                    >
+                      {item.title}
+                      {activeMenu === item.title ? (
+                        <ChevronUp className="ml-1 h-4 w-4" />
+                      ) : (
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      )}
+                    </button>
+                  )}
+
+                  {activeMenu === item.title && item.submenu && (
+                    <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 dark:bg-gray-800 dark:ring-gray-700">
+                      <div className="py-1">
+                        {item.submenu.map((submenu, index) => (
+                          <div key={index}>
+                            {submenu.title && (
+                              <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider px-4 py-2 dark:text-gray-400">
+                                {submenu.title}
+                              </h4>
+                            )}
+                            <ul>
+                              {submenu.items.map((subItem) => {
+                                const isSubActive = pathname === subItem.href;
+                                return (
+                                  <li key={subItem.title}>
+                                    <Link
+                                      href={subItem.href}
+                                      className={`block px-4 py-2 hover:bg-gray-100 hover:text-blue-600 dark:hover:bg-gray-700 ${
+                                        isSubActive
+                                          ? 'text-blue-400 dark:text-blue-400'
+                                          : 'text-gray-700 dark:text-gray-200'
+                                      }`}
+                                    >
+                                      {subItem.title}
+                                    </Link>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <div className="relative flex items-center gap-4">
@@ -194,70 +209,85 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
               </button>
             )}
 
-            <Link href='/clients' passHref>
-            <button className='p-2 px-6 rounded-md bg-blue-900 hover:bg-blue-800 text-white cursor-pointer'>Client Portal</button>
+            <Link href="/clients" passHref>
+              <button className="p-2 px-6 rounded-md bg-blue-900 hover:bg-blue-800 text-white cursor-pointer">
+                Client Portal
+              </button>
             </Link>
           </div>
-
         </div>
 
         {mobileMenuOpen && (
           <div className="md:hidden bg-white dark:bg-gray-900 py-4 border-t border-gray-200 dark:border-gray-700">
             <div className="space-y-2 px-4">
-              {menuItems.map((item) => (
-                <div key={item.title} className="border-b border-gray-100 dark:border-gray-700 pb-2">
-                  {item.isSimpleLink ? (
-                    <Link
-                      href={item.href}
-                      className="block py-2 text-gray-900 hover:text-blue-600 font-medium dark:text-gray-100 dark:hover:text-blue-400"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.title}
-                    </Link>
-                  ) : (
-                    <>
-                      <button
-                        onClick={() => toggleMenu(item.title)}
-                        className="flex items-center justify-between w-full py-2 text-gray-900 hover:text-blue-600 font-medium dark:text-gray-100 dark:hover:text-blue-400"
+              {menuItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <div key={item.title} className="border-b border-gray-100 dark:border-gray-700 pb-2">
+                    {item.isSimpleLink ? (
+                      <Link
+                        href={item.href}
+                        className={`block py-2 font-medium dark:text-gray-100 dark:hover:text-blue-400 hover:text-blue-600 ${
+                          isActive ? 'text-blue-400' : 'text-gray-900'
+                        }`}
+                        onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.title}
-                        {activeMenu === item.title ? (
-                          <ChevronUp className="h-4 w-4" />
-                        ) : (
-                          <ChevronDown className="h-4 w-4" />
-                        )}
-                      </button>
+                      </Link>
+                    ) : (
+                      <>
+                        <button
+                          onClick={() => toggleMenu(item.title)}
+                          className={`flex items-center justify-between w-full py-2 font-medium dark:text-gray-100 dark:hover:text-blue-400 hover:text-blue-600 ${
+                            isActive ? 'text-blue-400' : 'text-gray-900'
+                          }`}
+                        >
+                          {item.title}
+                          {activeMenu === item.title ? (
+                            <ChevronUp className="h-4 w-4" />
+                          ) : (
+                            <ChevronDown className="h-4 w-4" />
+                          )}
+                        </button>
 
-                      {activeMenu === item.title && item.submenu && (
-                        <div className="pl-4 mt-2 space-y-3">
-                          {item.submenu.map((submenu, index) => (
-                            <div key={index}>
-                              {submenu.title && (
-                                <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2 dark:text-gray-300">
-                                  {submenu.title}
-                                </h4>
-                              )}
-                              <ul className="space-y-2">
-                                {submenu.items.map((subItem) => (
-                                  <li key={subItem.title}>
-                                    <Link
-                                      href={subItem.href}
-                                      className="block py-1 text-gray-800 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
-                                      onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                      {subItem.title}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
-              ))}
+                        {activeMenu === item.title && item.submenu && (
+                          <div className="pl-4 mt-2 space-y-3">
+                            {item.submenu.map((submenu, index) => (
+                              <div key={index}>
+                                {submenu.title && (
+                                  <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2 dark:text-gray-300">
+                                    {submenu.title}
+                                  </h4>
+                                )}
+                                <ul className="space-y-2">
+                                  {submenu.items.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <li key={subItem.title}>
+                                        <Link
+                                          href={subItem.href}
+                                          className={`block py-1 hover:text-blue-600 dark:hover:text-blue-400 ${
+                                            isSubActive
+                                              ? 'text-blue-400 dark:text-blue-400'
+                                              : 'text-gray-800 dark:text-gray-200'
+                                          }`}
+                                          onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                          {subItem.title}
+                                        </Link>
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
