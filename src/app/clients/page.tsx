@@ -3,12 +3,21 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-const targetDate = new Date('2025-06-01T00:00:00') // Set your launch date here
+// Define a type for timeLeft
+type TimeLeft = {
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+}
+
+// Launch target date
+const targetDate = new Date('2025-06-01T00:00:00')
 
 export default function ComingSoonPage() {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft())
 
-  function calculateTimeLeft() {
+  function calculateTimeLeft(): TimeLeft {
     const now = new Date()
     const difference = targetDate.getTime() - now.getTime()
 
@@ -55,15 +64,13 @@ export default function ComingSoonPage() {
 
         {/* Countdown Timer */}
         <div className="flex justify-center gap-6 text-white/90 text-center">
-          {['days', 'hours', 'minutes', 'seconds'].map((unit) => (
+          {(['days', 'hours', 'minutes', 'seconds'] as (keyof TimeLeft)[]).map((unit) => (
             <div key={unit}>
-              <div className="text-4xl font-bold">{(timeLeft as any)[unit]}</div>
+              <div className="text-4xl font-bold">{timeLeft[unit]}</div>
               <div className="text-sm uppercase tracking-wide">{unit}</div>
             </div>
           ))}
         </div>
-
-       
       </motion.div>
     </main>
   )
