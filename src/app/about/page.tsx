@@ -62,21 +62,33 @@ const page = () => {
               className='bg-white shadow-lg p-6 rounded-lg'
             >
               <h1 className='text-3xl font-thin p-4 text-blue-900'>Welcome to Cyrus MicroCredit Services (CMCS)!</h1>
-              <p className='p-4 text-gray-700 leading-relaxed'>
-                We are dedicated to empowering individuals and businesses by providing accessible and 
-                affordable microcredit solutions. Our goal is to drive financial inclusion, foster growth, 
-                and support sustainable development through innovative financial services and expert guidance.
+              <p className='p-4 text-gray-700 leading-relaxed text-justify'>
+              Isaiah 44: 28 Isaiah who prophesied from about 740-761 B.C called
+CYRUS by name almost 150years before he ruled (559-530 B.C)! Later
+historians said that Cyrus read this prophecy and was so moved
+that he carried it out. Isaiah also predicted that Jerusalem would
+fall more than 100years before it happened (586 B.C) and that the
+temple would be rebuilt about 200 years before it happened. It is
+clear that these prophecies came from God, who knows the future.
+              </p>
+              <p className='p-4 text-gray-700 leading-relaxed text-justify'>
+              Isaiah 45: 1-8 This is the only place in the Bible where a Gentile
+ruler is said to be “anointed”. Anointing refers to the power of
+God in action to change lives! God is the power over all rulers
+and he anoints whom he chooses for his special tasks. Cyrus’
+kingdom spread across 2,000 miles (the largest of any empire
+then known) including the Assyrian and the Babylonian Empires.
               </p>
               <div className='p-4'>
-                <h2 className='text-xl font-semibold text-blue-800 mb-3'>Our Core Values</h2>
+                <h2 className='text-xl font-semibold text-blue-800 mb-3'>Our Corporate Values</h2>
                 <div className='grid grid-cols-2 gap-4'>
                   <div className='flex items-start space-x-2'>
                     <ShieldCheck className='text-blue-500 mt-1' size={20} />
-                    <span className='text-gray-700'>Integrity</span>
+                    <span className='text-gray-700'>Results Oriented</span>
                   </div>
                   <div className='flex items-start space-x-2'>
                     <Users className='text-blue-500 mt-1' size={20} />
-                    <span className='text-gray-700'>Customer Focus</span>
+                    <span className='text-gray-700'>Respect</span>
                   </div>
                   <div className='flex items-start space-x-2'>
                     <BarChart2 className='text-blue-500 mt-1' size={20} />
@@ -84,7 +96,7 @@ const page = () => {
                   </div>
                   <div className='flex items-start space-x-2'>
                     <Handshake className='text-blue-500 mt-1' size={20} />
-                    <span className='text-gray-700'>Partnership</span>
+                    <span className='text-gray-700'>Dedication</span>
                   </div>
                 </div>
               </div>
@@ -103,9 +115,10 @@ const page = () => {
                 </div>
                 <div className='p-6'>
                   <h1 className='text-xl font-bold text-blue-900 mb-2'>Our Mission</h1>
-                  <p className='text-gray-700'>
-                    We aim to transform lives by delivering financial expertise, accelerating progress, and ensuring 
-                    a secure future through trustworthy partnerships and innovative solutions.
+                  <p className='text-gray-700 text-justify'>
+                  To mobilize resources and offer Customer - Centered financial services in a sustainable way 
+                  for the total development of our clients and benefit of all stakeholders, through a reliable ICT platform.
+
                   </p>
                 </div>
               </motion.div>
@@ -122,9 +135,9 @@ const page = () => {
                 </div>
                 <div className='p-6'>
                   <h1 className='text-xl font-bold text-blue-900 mb-2'>Our Vision</h1>
-                  <p className='text-gray-700'>
-                    We envision a financially stable future for all, 
-                    offering creative strategies and professional advice to enhance wealth management.
+                  <p className='text-gray-700 text-justify'>
+                  To be the most preferred financial services institution contributing to the 
+                  total transformation of low- income clients in Ghana and the sub region.
                   </p>
                 </div>
               </motion.div>
@@ -142,9 +155,16 @@ const page = () => {
                 </div>
                 <div className='p-6'>
                   <h1 className='text-xl font-bold text-blue-900 mb-2'>Our History</h1>
-                  <p className='text-gray-700'>
+                  <p className='text-gray-700 text-justify pb-4'>
                     Founded in 2015, CMCS has grown from a small local lender to a nationally recognized microcredit provider, 
                     serving thousands of clients across multiple regions.
+                  </p>
+                  <p className='text-gray-700 text-justify'>
+                    The set up of Cyrus was born out of a postgraduate whose thesis focused on financial services of rural banks 
+                    and poverty alleviation in Ghana. Primary data for the analysis was obtained from a questionnaire survey 
+                    conducted on a sample of 124 beneficiaries of pro-poor financial services and products of two rural and 
+                    community banks in addition 10 banking oﬃcials of the two selected banks. This study indicated immense potential 
+                    for financial intermediation within the informal market segment.
                   </p>
                 </div>
               </motion.div>
@@ -253,8 +273,10 @@ const page = () => {
         </div>
       </div>
 
-      {/* Team Section */}
+      {/* Hide for now  
+      
       <TeamSection />
+      */}
 
       {/* Testimonials Section */}
       <Testimonials />

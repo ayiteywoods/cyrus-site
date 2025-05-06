@@ -1,4 +1,4 @@
-import { Activity, BadgeCent, FileBadge, Landmark, UserRoundSearch } from 'lucide-react'
+import { Activity, BadgeCent, FileBadge, Landmark, UserRoundSearch, Users } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -35,8 +35,8 @@ const QuickLinks = () => {
         </div>
         <div className=' px-10 flex flex-col items-center justify-center'>
             <div className='font-light text-center'>
-            <Link href='/loans'>   <FileBadge  size={50} strokeWidth={1} className="text-blue-400 hover:text-orange-200  font-thin mx-auto"/>
-                <p>Rewards</p>
+            <Link href='/clients'>   <Users  size={50} strokeWidth={1} className="text-blue-400 hover:text-orange-200  font-thin mx-auto"/>
+                <p>Clients Portal</p>
                 </Link>
             </div>
         </div>

@@ -167,7 +167,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
             ))}
           </div>
 
-          <div className="relative flex items-center">
+          <div className="relative flex items-center gap-4">
             {showSearch ? (
               <form onSubmit={handleSearch} className="relative">
                 <input
@@ -193,7 +193,12 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                 <Search size={20} />
               </button>
             )}
+
+            <Link href='/clients' passHref>
+            <button className='p-2 px-6 rounded-md bg-blue-900 hover:bg-blue-800 text-white cursor-pointer'>Client Portal</button>
+            </Link>
           </div>
+
         </div>
 
         {mobileMenuOpen && (

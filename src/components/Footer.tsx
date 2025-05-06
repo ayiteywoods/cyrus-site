@@ -1,8 +1,9 @@
-// components/Footer.tsx
 "use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { ReactNode } from 'react';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 type FooterLink = {
   name: string;
@@ -26,42 +27,45 @@ type SocialLink = {
 };
 
 const Footer = () => {
-  const currentYear = 2024; // Static year value
+  const currentYear = new Date().getFullYear();
 
   const footerColumns: FooterColumn[] = [
-    { 
+    {
       type: 'logo',
       content: {
         logo: '/logo white.png',
-        description: 'Providing accessible financial solutions to empower individuals and businesses across Ghana.'
-      }
+        description:
+          'Providing accessible financial solutions to empower individuals and businesses across Ghana.',
+      },
     },
-    { 
-      title: 'Business Banking', 
+    {
+      title: 'Client Portal',
       links: [
-        { name: 'Business Accounts', url: '#' },
-        { name: 'Trade Services', url: '#' },
-        { name: 'Cash Management', url: '#' },
-        { name: 'Business Loans', url: '#' }
-      ]
+        { name: 'Access Portal', url: '/clients' },
+        { name: 'Client-Centric Approach', url: '/' },
+        { name: 'Loan Repayment', url: '/' },
+        { name: 'Our Policies', url: '/' },
+        
+      ],
     },
-    { 
-      title: 'Digital Banking', 
+    {
+      title: 'Financial Solutions',
       links: [
-        { name: 'Online Banking', url: '#' },
-        { name: 'Mobile Banking', url: '#' },
-        { name: 'Mobile App', url: '#' }
-      ]
+        { name: 'Loan Calculator', url: '/loans' },
+        { name: 'Loan Types', url: '/loans' },
+        { name: 'FAQs', url: '/faq' },
+        {name: 'Success Stories', url: '/loans'},
+      ],
     },
-    { 
-      title: 'About Us', 
+    {
+      title: 'About Us',
       links: [
-        { name: 'Our Story', url: '#' },
-        { name: 'Careers', url: '#' },
-        { name: 'Newsroom', url: '#' },
-        { name: 'Sustainability', url: '#' }
-      ]
-    }
+        { name: 'Our Story', url: '/about' },
+        { name: 'Careers', url: '/careers' },
+        { name: 'Services', url: '/services' },
+        { name: 'Contact Us', url: '/contact' },
+      ],
+    },
   ];
 
   const legalLinks: FooterLink[] = [
@@ -69,17 +73,19 @@ const Footer = () => {
     { name: 'Privacy Notice', url: '#' },
     { name: 'Cookie Policy', url: '#' },
     { name: 'Security', url: '#' },
-    { name: 'Modern Slavery Act', url: '#' }
+    { name: 'Modern Slavery Act', url: '#' },
   ];
 
   const socialLinks: SocialLink[] = [
-    // Your SVG icons here...
+    { icon: <FaFacebookF />, url: 'https://web.facebook.com/profile.php?id=61575659940082', name: 'Facebook' },
+    { icon: <FaTwitter />, url: 'https://twitter.com', name: 'Twitter' },
+    { icon: <FaLinkedinIn />, url: 'https://linkedin.com', name: 'LinkedIn' },
+    { icon: <FaInstagram />, url: 'https://www.instagram.com/cyrusmicrocreditservices/?igsh=ZnJuZXhnY2k4cDBy&utm_source=qr', name: 'Instagram' },
   ];
 
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-6 py-12">
-        
         {/* Footer Columns */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {footerColumns.map((column, index) => (
@@ -87,7 +93,7 @@ const Footer = () => {
               {column.type === 'logo' ? (
                 <>
                   <div className="mb-4">
-                    <Image 
+                    <Image
                       src={column.content?.logo || '/default-logo.png'}
                       alt="Cyrus MicroCredit Logo"
                       width={300}
@@ -99,6 +105,19 @@ const Footer = () => {
                   <p className="text-gray-300 text-sm">
                     {column.content?.description}
                   </p>
+                  {/* Social Icons under logo */}
+                  <div className="flex space-x-4 mt-4">
+                    {socialLinks.map((social, index) => (
+                      <Link
+                        key={index}
+                        href={social.url}
+                        className="text-gray-400 hover:text-white text-xl transition-colors"
+                        aria-label={`Follow us on ${social.name}`}
+                      >
+                        {social.icon}
+                      </Link>
+                    ))}
+                  </div>
                 </>
               ) : (
                 <>
@@ -106,8 +125,8 @@ const Footer = () => {
                   <ul className="space-y-2">
                     {column.links?.map((link, linkIndex) => (
                       <li key={linkIndex}>
-                        <Link 
-                          href={link.url} 
+                        <Link
+                          href={link.url}
                           className="text-gray-300 hover:text-white transition-colors"
                           aria-label={link.name}
                         >
@@ -125,10 +144,12 @@ const Footer = () => {
         {/* Disclaimer */}
         <div className="mt-8 text-gray-400 text-xs space-y-2 text-center">
           <p>
-            Cyrus MicroCredit Ghana is authorized by the Bank of Ghana and operates under the Banking Act 2004 (Act 673).
+            Cyrus MicroCredit Ghana is authorized by the Bank of Ghana and
+            operates under the Banking Act 2004 (Act 673).
           </p>
           <p>
-            This website uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies.
+            This website uses cookies to improve your experience. By continuing
+            to browse, you agree to our use of cookies.
           </p>
         </div>
 
@@ -145,26 +166,13 @@ const Footer = () => {
 
           <div className="flex flex-wrap justify-center gap-4">
             {legalLinks.map((link, index) => (
-              <Link 
-                key={index} 
-                href={link.url} 
+              <Link
+                key={index}
+                href={link.url}
                 className="text-gray-400 hover:text-white text-sm transition-colors"
                 aria-label={link.name}
               >
                 {link.name}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex space-x-4">
-            {socialLinks.map((social, index) => (
-              <Link 
-                key={index} 
-                href={social.url} 
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label={`Follow us on ${social.name}`}
-              >
-                {social.icon}
               </Link>
             ))}
           </div>

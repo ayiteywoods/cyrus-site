@@ -90,52 +90,59 @@ export default function Home() {
 
       {/* Welcome Section */}
       <section className="bg-blue-50">
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className='bg-white shadow-lg p-8 rounded-lg hover:shadow-xl transition-shadow'
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="bg-white shadow-lg p-8 rounded-lg hover:shadow-xl transition-shadow"
+      >
+        <h1 className="text-3xl font-thin text-blue-900 pt-4 pb-6">
+          Welcome to Cyrus MicroCredit Services (CMCS)!
+        </h1>
+        <p className="text-gray-700 leading-relaxed text-justify">
+          Isaiah 44:28 — Isaiah who prophesied from about 740–761 B.C called CYRUS by name almost 150 years before he ruled (559–530 B.C)!
+          Later historians said that Cyrus read this prophecy and was so moved that he carried it out. Isaiah also predicted that Jerusalem
+          would fall more than 100 years before it happened (586 B.C) and that the temple would be rebuilt about 200 years before it happened.
+          It is clear that these prophecies came from God, who knows the future.
+        </p>
+        <div className="mt-8">
+          <Link href="/about" passHref>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
-              <h1 className='text-3xl font-thin text-blue-900 pt-4 pb-6'>Welcome to Cyrus MicroCredit Services (CMCS)!</h1>
-              <p className='text-gray-700 leading-relaxed'>
-                We are dedicated to empowering individuals and businesses by providing accessible and 
-                affordable microcredit solutions. Our goal is to drive financial inclusion, foster growth, 
-                and support sustainable development through innovative financial services and expert guidance.
-              </p>
-              <div className="mt-8">
-                <Link href="/about" passHref>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Learn More About Us
-                </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className='relative h-96 rounded-lg overflow-hidden shadow-lg'
-            >
-              <Image 
-                src='/images/about.webp' 
-                alt='about CMCS' 
-                fill 
-                className='object-cover'
-                priority
-              />
-            </motion.div>
-          </div>
+              Learn More About Us
+            </motion.button>
+          </Link>
         </div>
-      </section>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="relative h-full rounded-lg overflow-hidden shadow-lg"
+      >
+        <iframe
+          className="w-full h-full rounded-lg"
+          src="https://www.youtube.com/embed/izMdkZL2dsE?autoplay=1&mute=1&loop=1&playlist=izMdkZL2dsE&controls=0&rel=0&modestbranding=1"
+          title="Cyrus MicroCredit Introduction"
+          frameBorder="0"
+          allow="autoplay; encrypted-media; fullscreen"
+          allowFullScreen
+        ></iframe>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
 
   
 
