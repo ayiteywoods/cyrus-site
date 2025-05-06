@@ -7,7 +7,7 @@ import React from 'react'
 import CountUp from 'react-countup'
 import { motion } from 'framer-motion'
 import Testimonials from '@/components/Testimonials'
-import TeamSection from '@/components/TeamSection'
+// import TeamSection from '@/components/TeamSection'
 import Link from 'next/link'
 
 const page = () => {

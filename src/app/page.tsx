@@ -10,7 +10,7 @@ import Support from '@/components/Support';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import { Handshake, ShieldCheck, BarChart2, Users, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
+//import Image from 'next/image';
 import CountUp from 'react-countup';
 import Link from 'next/link';
 
