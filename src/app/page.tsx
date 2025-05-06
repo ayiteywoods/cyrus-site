@@ -330,7 +330,7 @@ export default function Home() {
             {stat.icon}
           </div>
           <h3 className="text-3xl font-bold text-gray-900 mb-2">
-            <CountUp end={stat.value} duration={2.5} />{stat.suffix}
+            <CountUp end={stat.value} duration={5} />{stat.suffix}
           </h3>
           <p className="text-gray-600">{stat.label}</p>
         </motion.div>

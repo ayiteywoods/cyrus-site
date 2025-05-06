@@ -56,7 +56,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1 }} 
          className='rounded-xl shadow-md bg-white flex gap-2'>
            <div className='p-4'>
-               <h1 className='text-3xl font-semibold '><CountUp end={30}/>K+</h1>
+               <h1 className='text-3xl font-semibold '><CountUp end={30} duration={5}/>K+</h1>
                <p>We&apos;ve experienced more than 10+ years with success.</p>
           </div>
          
@@ -70,7 +70,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1 }}  
 className='rounded-xl shadow-md bg-white flex gap-2'>
     <div className='p-4'>
-        <h1 className='text-3xl font-semibold '><CountUp end={95}/>%+</h1>
+        <h1 className='text-3xl font-semibold '><CountUp end={95} duration={5}/>%+</h1>
         <p>We achieve a lot for our work from top certified agencies.</p>
     </div>
   
@@ -85,7 +85,7 @@ className='rounded-xl shadow-md bg-white flex gap-2'>
                     whileInView={{ opacity: 1 }}  
                     className='rounded-xl shadow-md bg-white flex gap-2'>
     <div className='p-6'>
-        <h1 className='text-3xl font-semibold '><CountUp end={100}/>+</h1>
+        <h1 className='text-3xl font-semibold '><CountUp end={100} duration={5}/>+</h1>
         <p>We&apos;ve made clients happy all over the world.</p>
     </div>
     

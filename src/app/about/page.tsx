@@ -192,7 +192,7 @@ then known) including the Assyrian and the Babylonian Empires.
               <div key={index} className='p-8 text-center group'>
                 <div className='text-white mb-2'>{stat.icon}</div>
                 <h1 className='text-white text-3xl md:text-4xl font-bold mb-2'>
-                  {stat.prefix}<CountUp end={stat.value} duration={3}/>{stat.suffix}
+                  {stat.prefix}<CountUp end={stat.value} duration={5}/>{stat.suffix}
                 </h1>
                 <p className='text-blue-200 font-medium group-hover:text-white transition-colors'>
                   {stat.label}
