@@ -38,8 +38,8 @@ export default function HeroSlider() {
     {
       id: 3,
       image: '/slider3.jpg',
-      title: 'Business Solutions',
-      subtitle: 'Tailored banking for your business growth',
+      title: 'Business Loan Solution',
+      subtitle: 'Tailored Loans for your business growth',
       ctaText: 'Explore',
       ctaLink: '/services'
     },
@@ -47,7 +47,7 @@ export default function HeroSlider() {
         id: 4,
         image: '/slider4.jpg',
         title: 'Convenience, Product Affordability, Ease of Service',
-        subtitle: 'Tailored banking for your business growth',
+        subtitle: 'Finance solutions designed with you in mind',
         ctaText: 'Explore',
         ctaLink: '/services'
       }
