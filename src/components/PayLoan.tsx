@@ -8,8 +8,8 @@ const PayLoan = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className='flex flex-col lg:flex-row justify-between items-center gap-8'>
         {/* Text Content */}
-        <div className='shadow-lg p-6 md:p-10 bg-blue-50 rounded-2xl w-full lg:w-[60%]'>
-          <h1 className='text-2xl md:text-3xl text-blue-400 font-semibold mb-4'>
+        <div className='shadow-lg p-6 md:p-10 bg-cyan-50 rounded-2xl w-full lg:w-[60%]'>
+          <h1 className='text-2xl md:text-3xl text-brandsecondary font-semibold mb-4'>
             We Promise Sustainable Future For You..
           </h1>
           
@@ -37,7 +37,7 @@ const PayLoan = () => {
           
           <div className='mt-6 text-center lg:text-left'>
             <Link href="/about" passHref>
-            <button className='text-white rounded-xl bg-blue-400 hover:bg-blue-500 px-6 py-3 transition-colors duration-300'>
+            <button className='text-white rounded-xl bg-brandsecondary hover:bg-blue-900 px-6 py-3 transition-colors duration-300'>
               More About Us
             </button>
             </Link>

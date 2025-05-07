@@ -120,8 +120,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                   {item.isSimpleLink ? (
                     <Link
                       href={item.href}
-                      className={`px-4 py-2 font-medium hover:text-blue-600 ${
-                        isActive ? 'text-blue-500' : 'text-gray-800'
+                      className={`px-4 py-2 font-medium hover:text-brand ${
+                        isActive ? 'text-brand' : 'text-gray-800'
                       }`}
                     >
                       {item.title}
@@ -129,8 +129,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                   ) : (
                     <button
                       onClick={() => toggleMenu(item.title)}
-                      className={`px-4 py-2 font-medium flex items-center hover:text-blue-600 ${
-                        isActive ? 'text-blue-500' : 'text-gray-800'
+                      className={`px-4 py-2 font-medium flex items-center hover:text-brand ${
+                        isActive ? 'text-brand' : 'text-gray-800'
                       }`}
                     >
                       {item.title}
@@ -159,8 +159,8 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                                   <li key={subItem.title}>
                                     <Link
                                       href={subItem.href}
-                                      className={`block px-4 py-2 hover:bg-gray-100 hover:text-blue-600 ${
-                                        isSubActive ? 'text-blue-500' : 'text-gray-700'
+                                      className={`block px-4 py-2 hover:bg-gray-100 hover:text-brand ${
+                                        isSubActive ? 'text-brand' : 'text-gray-700'
                                       }`}
                                     >
                                       {subItem.title}
@@ -187,11 +187,11 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-4 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="pl-4 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-600"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-brand"
                 >
                   <Search size={20} />
                 </button>
@@ -199,7 +199,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
             ) : (
               <button
                 onClick={() => setShowSearch(true)}
-                className="text-gray-500 hover:text-blue-600 p-2"
+                className="text-gray-500 hover:text-brand p-2"
                 aria-label="Search"
               >
                 <Search size={20} />
@@ -207,7 +207,7 @@ export default function Navbar({ logo, menuItems }: NavbarProps) {
             )}
 
             <Link href="/clients" passHref>
-              <button className="p-2 px-6 rounded-md bg-blue-900 hover:bg-blue-800 text-white cursor-pointer">
+              <button className="p-2 px-6 rounded-md bg-brandsecondary hover:bg-blue-900 text-white cursor-pointer">
                 Client Portal
               </button>
             </Link>

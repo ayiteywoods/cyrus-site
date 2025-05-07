@@ -61,17 +61,17 @@ export default function Home() {
     {
       title: "Business Loans",
       description: "Tailored financing solutions to grow your enterprise",
-      icon: <BarChart2 size={32} className="text-blue-600" />
+      icon: <BarChart2 size={32} className="text-brand" />
     },
     {
       title: "Personal Loans",
       description: "Flexible credit for your personal needs",
-      icon: <Users size={32} className="text-blue-600" />
+      icon: <Users size={32} className="text-brand" />
     },
     {
       title: "Agricultural Financing",
       description: "Specialized loans for farmers and agribusinesses",
-      icon: <ShieldCheck size={32} className="text-blue-600" />
+      icon: <ShieldCheck size={32} className="text-brand" />
     }
   ];
 
@@ -89,7 +89,7 @@ export default function Home() {
       </div>
 
       {/* Welcome Section */}
-      <section className="bg-blue-50">
+      <section className="bg-cyan-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
@@ -114,7 +114,7 @@ export default function Home() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-3 bg-brandsecondary text-white rounded-lg hover:bg-blue-900 transition-colors"
             >
               Learn More About Us
             </motion.button>
@@ -146,7 +146,7 @@ export default function Home() {
 
   
 
-      <div className='bg-blue-950 relative overflow-hidden'>
+      <div className='bg-brand relative overflow-hidden'>
   {/* Full-width organic swell background */}
   <div className="absolute inset-0 overflow-hidden opacity-30">
     <svg
@@ -239,7 +239,7 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-blue-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all"
+                className="bg-cyan-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all"
               >
                 <div className="text-blue-600 mb-4">
                   {service.icon}
@@ -256,7 +256,7 @@ export default function Home() {
       {/* Impact Section */}
       <div className="bg-blue-50 w-full"> {/* Full width blue background */}
            {/* Stats Section */}
-     <section className="relative bg-blue-900 py-16 overflow-hidden">
+     <section className="relative bg-brand py-16 overflow-hidden">
   {/* Vector Swell Background */}
   <div className="absolute inset-0 overflow-hidden opacity-30">
   <svg
@@ -326,7 +326,7 @@ export default function Home() {
           whileHover={{ y: -5 }}
           className="bg-white p-6 rounded-lg text-center shadow-md"
         >
-          <div className="text-blue-600 mb-4 flex justify-center">
+          <div className="text-brand mb-4 flex justify-center">
             {stat.icon}
           </div>
           <h3 className="text-3xl font-bold text-gray-900 mb-2">
@@ -341,7 +341,7 @@ export default function Home() {
       
 
       {/* Client-Centric Approach */}
-      <div className="bg-sky-100 rounded-2xl shadow my-8">
+      <div className="bg-cyan-50 rounded-2xl shadow my-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <ClientCentric />
         </div>
@@ -354,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* Support Section */}
-      <section className="bg-blue-900 relative overflow-hidden">
+      <section className="bg-brandsecondary relative overflow-hidden">
   {/* Full-width organic swell background */}
   <div className="absolute inset-0 overflow-hidden opacity-20">
     <svg
@@ -432,7 +432,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-blue-200 py-16">
+      <section className="bg-cyan-200 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -452,7 +452,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-900 py-16 relative overflow-hidden">
+      <section className="bg-brandsecondary py-16 relative overflow-hidden">
   {/* Full-width organic swell background */}
   <div className="absolute inset-0 overflow-hidden opacity-20">
     <svg
@@ -527,7 +527,7 @@ export default function Home() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-8 py-3 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+          className="px-8 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors"
         >
           Apply Now
         </motion.button>
@@ -536,7 +536,7 @@ export default function Home() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-8 py-3 rounded-lg text-blue-700 bg-white border border-blue-300 hover:bg-gray-50 transition-colors"
+          className="px-8 py-3 rounded-lg text-brandsecondary bg-white border border-brandsecondary hover:bg-gray-50 transition-colors"
         >
           Contact Us
         </motion.button>

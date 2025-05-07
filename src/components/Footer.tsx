@@ -84,7 +84,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-brand text-brandsecondary">
       <div className="container mx-auto px-6 py-12">
         {/* Footer Columns */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -102,7 +102,7 @@ const Footer = () => {
                       priority
                     />
                   </div>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-brandsecondary text-sm">
                     {column.content?.description}
                   </p>
                   {/* Social Icons under logo */}
@@ -111,7 +111,7 @@ const Footer = () => {
                       <Link
                         key={index}
                         href={social.url}
-                        className="text-gray-400 hover:text-white text-xl transition-colors"
+                        className="text-brandsecondary hover:text-brandsecondary text-xl transition-colors"
                         aria-label={`Follow us on ${social.name}`}
                       >
                         {social.icon}
@@ -127,7 +127,7 @@ const Footer = () => {
                       <li key={linkIndex}>
                         <Link
                           href={link.url}
-                          className="text-gray-300 hover:text-white transition-colors"
+                          className="text-brandsecondary hover:text-brandsecondary transition-colors"
                           aria-label={link.name}
                         >
                           {link.name}
@@ -142,7 +142,7 @@ const Footer = () => {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 text-gray-400 text-xs space-y-2 text-center">
+        <div className="mt-8 text-brandsecondary text-xs space-y-2 text-center">
           <p>
             Cyrus MicroCredit Ghana is authorized by the Bank of Ghana and
             operates under the Banking Act 2004 (Act 673).
@@ -159,7 +159,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center text-center gap-4">
           <div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-brandsecondary text-sm">
               © {currentYear} Cyrus MicroCredit Ghana. All rights reserved.
             </p>
           </div>
@@ -169,7 +169,7 @@ const Footer = () => {
               <Link
                 key={index}
                 href={link.url}
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-brandsecondary hover:text-brandsecondary text-sm transition-colors"
                 aria-label={link.name}
               >
                 {link.name}

@@ -109,7 +109,7 @@ export default function HeroSlider() {
                 </p>
                 <a
                   href={slide.ctaLink}
-                  className="inline-block bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 rounded-md font-medium transition-colors duration-300 animate-fadeIn delay-200"
+                  className="inline-block bg-brandsecondary hover:bg-blue-900 text-white px-8 py-3 rounded-md font-medium transition-colors duration-300 animate-fadeIn delay-200"
                 >
                   {slide.ctaText}
                 </a>
