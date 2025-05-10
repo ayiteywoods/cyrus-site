@@ -11,8 +11,7 @@ type FAQItem = {
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [showForm, setShowForm] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  
 
   const faqs: FAQItem[] = [
     {
@@ -57,17 +56,7 @@ const FAQ = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
-    // Here you can connect to your backend (API call)
-    // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify({name, email, message}) })
-
-    // For now, just simulate a successful submission
-    setTimeout(() => {
-      setFormSubmitted(true);
-    }, 1000);
-  };
 
   return (
     <section className="max-w-7xl mx-auto p-6">
@@ -125,60 +114,6 @@ const FAQ = () => {
           Get in Touch
         </Link>
         </button>
-
-        {showForm && (
-          <motion.div
-            className="mt-10 max-w-2xl mx-auto p-8 rounded-3xl bg-white/20 backdrop-blur-md shadow-2xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            {!formSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-left text-blue-900 mb-2">Name</label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full border-gray-300 rounded-lg p-3 bg-white/70 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-left text-blue-900 mb-2">Email</label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full border-gray-300 rounded-lg p-3 bg-white/70 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="you@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-left text-blue-900 mb-2">Question</label>
-                  <textarea
-                    required
-                    className="w-full border-gray-300 rounded-lg p-3 bg-white/70 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="Type your question here..."
-                    rows={4}
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-full hover:scale-105 transform transition"
-                >
-                  Submit Question
-                </button>
-              </form>
-            ) : (
-              <motion.div
-                className="text-green-600 text-lg font-semibold"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-              >
-                🎉 Thank you! Your question has been submitted.
-              </motion.div>
-            )}
-          </motion.div>
-        )}
       </div>
     </section>
   );
