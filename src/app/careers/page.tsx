@@ -91,7 +91,7 @@ const CareersPage = () => {
             className='rounded-lg bg-white p-8 opacity-90 max-w-2xl'
           >
             <p className='pt-2 text-brandsecondary font-medium'>Join Our Team</p>
-            <h1 className='pt-4 pb-4 text-3xl font-bold text-gold'>Build Your Career in Microfinance</h1>
+            <h1 className='pt-4 pb-4 text-3xl font-thin text-gold'>Build Your Career in Microfinance</h1>
             <button 
               onClick={() => {
                 setActiveTab('openings');

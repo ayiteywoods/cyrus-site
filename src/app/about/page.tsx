@@ -33,7 +33,7 @@ const page = () => {
             >
               <p className='pt-2 text-brandsecondary font-medium'>About CMCS</p>
               <p className='pt-2 pb-4 text-gray-700'>Navigating your business growth with experience & insightful solutions.</p>
-              <h1 className='pt-4 pb-4 text-3xl md:text-4xl font-bold text-gold'>
+              <h1 className='pt-4 pb-4 text-3xl md:text-4xl font-thin text-gold'>
                 We&apos;re an award-winning microcredit services provider
               </h1>
               <Link href="/contact" passHref>

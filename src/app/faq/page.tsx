@@ -33,7 +33,7 @@ const Page = () => {
             <p className="text-blue-600 text-sm uppercase tracking-wider mb-2">
               Frequently Asked Questions
             </p>
-            <h1 className="text-4xl font-bold text-blue-900 mb-4">
+            <h1 className="text-4xl font-bold text-gold mb-4">
               Got Questions? We&apos;ve Got You Covered.
             </h1>
             <p className="text-gray-700 mb-6">
@@ -42,7 +42,7 @@ const Page = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               href="#contact"
-              className="inline-block px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 rounded-lg bg-brandsecondary text-white font-semibold hover:bg-blue-900 transition"
             >
               Get in Touch
             </motion.a>
@@ -60,6 +60,8 @@ const Page = () => {
       >
         <FAQ />
       </motion.div>
+
+      <hr className='text-gold'></hr>
     </>
   );
 };

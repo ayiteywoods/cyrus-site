@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 type FAQItem = {
   question: string;
@@ -70,7 +71,7 @@ const FAQ = () => {
 
   return (
     <section className="max-w-7xl mx-auto p-6">
-      <h2 className="text-3xl font-thin text-center mb-10 text-blue-900">
+      <h2 className="text-3xl font-thin text-center mb-10 text-brandsecondary">
         (CYRUS) - Frequently Asked Questions
       </h2>
 
@@ -110,17 +111,19 @@ const FAQ = () => {
 
       {/* "Ask a Question" Section */}
       <div className="mt-16 text-center">
-        <h3 className="text-2xl font-thin text-blue-800 mb-4">
+        <h3 className="text-2xl font-thin text-brandsecondary mb-4">
           Still have questions?
         </h3>
         <p className="text-gray-600 mb-6">
           If you didn&apos;t find what you were looking for, you can ask us directly!
         </p>
-        <button
-          onClick={() => setShowForm(!showForm)}
-          className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transform transition"
-        >
-          {showForm ? "Close Form" : "Ask a Question"}
+        <button className="bg-gradient-to-r
+         from-brandsecondary to-blue-900 text-white px-8 py-3 
+         rounded-full shadow-lg hover:scale-105 transform transition">
+
+        <Link href="/contact" className="inline-block">
+          Get in Touch
+        </Link>
         </button>
 
         {showForm && (

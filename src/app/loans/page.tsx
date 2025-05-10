@@ -104,7 +104,7 @@ const Page = () => {
             >
               <p className='pt-2 text-blue-600 font-medium'>Apply for Loans</p>
               <p className='pt-2 pb-4 text-gray-700'>Choose your ideal plan. No obligation, cancel anytime.</p>
-              <h1 className='pt-4 pb-4 text-3xl font-bold text-gold'>Financial Solutions Tailored for You</h1>
+              <h1 className='pt-4 pb-4 text-3xl font-thin text-gold'>Financial Solutions Tailored for You</h1>
               <Link href="/loans" passHref>
               <button className='px-6 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors'>
                 APPLY NOW
