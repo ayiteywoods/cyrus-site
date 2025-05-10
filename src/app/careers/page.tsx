@@ -90,8 +90,8 @@ const CareersPage = () => {
             transition={{ duration: 0.5 }}
             className='rounded-lg bg-white p-8 opacity-90 max-w-2xl'
           >
-            <p className='pt-2 text-blue-600 font-medium'>Join Our Team</p>
-            <h1 className='pt-4 pb-4 text-3xl font-bold'>Build Your Career in Microfinance</h1>
+            <p className='pt-2 text-brandsecondary font-medium'>Join Our Team</p>
+            <h1 className='pt-4 pb-4 text-3xl font-bold text-gold'>Build Your Career in Microfinance</h1>
             <button 
               onClick={() => {
                 setActiveTab('openings');
@@ -99,7 +99,7 @@ const CareersPage = () => {
                   document.getElementById('job-openings')?.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
               }}
-              className='px-6 py-3 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors'
+              className='px-6 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors'
             >
               VIEW OPEN POSITIONS
             </button>
@@ -113,19 +113,19 @@ const CareersPage = () => {
         <div className='flex flex-wrap justify-center mb-8 border-b border-gray-200'>
           <button
             onClick={() => setActiveTab('openings')}
-            className={`px-6 py-3 font-medium ${activeTab === 'openings' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+            className={`px-6 py-3 font-medium ${activeTab === 'openings' ? 'text-gold border-b-2 border-gold' : 'text-gray-500'}`}
           >
             Current Openings
           </button>
           <button
             onClick={() => setActiveTab('benefits')}
-            className={`px-6 py-3 font-medium ${activeTab === 'benefits' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+            className={`px-6 py-3 font-medium ${activeTab === 'benefits' ? 'text-gold border-b-2 border-gold' : 'text-gray-500'}`}
           >
             Our Benefits
           </button>
           <button
             onClick={() => setActiveTab('process')}
-            className={`px-6 py-3 font-medium ${activeTab === 'process' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+            className={`px-6 py-3 font-medium ${activeTab === 'process' ? 'text-gold border-b-2 border-gold' : 'text-gray-500'}`}
           >
             Hiring Process
           </button>

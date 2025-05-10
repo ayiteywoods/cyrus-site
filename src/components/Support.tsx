@@ -19,7 +19,7 @@ const Support = () => {
             
             className='bg-white rounded-lg p-8 items-center'>
                 <div className='items-center flex gap-2'>
-                    <Logs size={40} color='orange'/>
+                    <Logs size={40} color='gold'/>
                     <h1 className='text-lg font-bold text-center'>Transparent Operations</h1>
                     </div>
                 <p className='text-center p-2'>We maintain full transparency in all our dealings 
@@ -33,7 +33,7 @@ const Support = () => {
                     whileInView={{ opacity: 1 }} 
             className='bg-white rounded-lg p-8 items-center'>
                 <div className='items-center flex gap-2'>
-                    <ShieldPlus size={40} color='orange'/>
+                    <ShieldPlus size={40} color='gold'/>
                     <h1 className='text-lg font-bold text-center'>Secure Transactions</h1>
                     </div>
                 <p className='text-center p-2'>Our advanced encryption technology keeps your 
@@ -47,10 +47,10 @@ const Support = () => {
                     whileInView={{ opacity: 1 }} 
             className='bg-white rounded-lg p-8 items-center'>
                 <div className='items-center flex gap-2'>
-                    <Infinity size={40} color='orange'/>
+                    <Infinity size={40} color='gold'/>
                     <h1 className='text-lg font-bold text-center'>Proven Track Record</h1>
                     </div>
-                <p className='text-center p-2'>OWith a decade of experience, our successful 
+                <p className='text-center p-2'>With a decade of experience, our successful 
                     history speaks volumes about our reliability and commitment.</p>
             </motion.div>
         </div>

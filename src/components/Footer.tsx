@@ -33,7 +33,7 @@ const Footer = () => {
     {
       type: 'logo',
       content: {
-        logo: '/logo white.png',
+        logo: '/Cyrus logo.png',
         description:
           'Providing accessible financial solutions to empower individuals and businesses across Ghana.',
       },
@@ -84,7 +84,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-brand text-brandsecondary">
+    <footer className="bg-white text-brandsecondary">
       <div className="container mx-auto px-6 py-12">
         {/* Footer Columns */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">

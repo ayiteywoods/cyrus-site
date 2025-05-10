@@ -9,10 +9,10 @@ const Impact = () => {
   return (
     <>
     <div className='pb-4'>
-        <h1 className='text-3xl text-brandsecondary'>
+        <h1 className='text-3xl text-white'>
             Impact
         </h1>
-        <p className='pr-20 text-brandsecondary'>
+        <p className='pr-20 text-white'>
         Join the community of businesses and individuals who trust us to meet their financial needs.
         </p>
     </div>
@@ -44,7 +44,7 @@ const Impact = () => {
             </div>
             <div className='place-content-center bg-white p-4' >
             <Globe size={60} />
-            </div>
+            </div> 
         </div>
     </div> */}
      <div className='grid md:grid-cols-3 grid-cols-1 justify-between items-center gap-7'>
@@ -56,7 +56,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1 }} 
          className='rounded-xl shadow-md bg-white flex gap-2'>
            <div className='p-4'>
-               <h1 className='text-3xl font-semibold '><CountUp end={30} duration={5}/>K+</h1>
+               <h1 className='text-3xl font-semibold text-gold'><CountUp end={30} duration={5}/>K+</h1>
                <p>We&apos;ve experienced more than 10+ years with success.</p>
           </div>
          
@@ -70,7 +70,7 @@ const Impact = () => {
                     whileInView={{ opacity: 1 }}  
 className='rounded-xl shadow-md bg-white flex gap-2'>
     <div className='p-4'>
-        <h1 className='text-3xl font-semibold '><CountUp end={95} duration={5}/>%+</h1>
+        <h1 className='text-3xl font-semibold text-gold'><CountUp end={95} duration={5}/>%+</h1>
         <p>We achieve a lot for our work from top certified agencies.</p>
     </div>
   
@@ -85,7 +85,7 @@ className='rounded-xl shadow-md bg-white flex gap-2'>
                     whileInView={{ opacity: 1 }}  
                     className='rounded-xl shadow-md bg-white flex gap-2'>
     <div className='p-6'>
-        <h1 className='text-3xl font-semibold '><CountUp end={100} duration={5}/>+</h1>
+        <h1 className='text-3xl font-semibold text-gold'><CountUp end={100} duration={5}/>+</h1>
         <p>We&apos;ve made clients happy all over the world.</p>
     </div>
     

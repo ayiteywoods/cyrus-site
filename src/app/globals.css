@@ -15,6 +15,7 @@
   --font-mono: var(--font-geist-mono);
   --color-brand: #4ec0cb;
   --color-brandsecondary: #1b2151;
+  --color-gold: #d29528;
 }
 
 @media (prefers-color-scheme: dark) {

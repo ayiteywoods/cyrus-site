@@ -65,7 +65,7 @@ const LoanCalculator = ({ selectedLoan }: LoanCalculatorProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
       <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-        <CalculatorIcon className="h-6 w-6 text-blue-600" />
+        <CalculatorIcon className="h-6 w-6 text-gold" />
         Loan Calculator
       </h3>
       
@@ -163,7 +163,7 @@ const LoanCalculator = ({ selectedLoan }: LoanCalculatorProps) => {
           </div>
         </div>
 
-        <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+        <button className="w-full bg-brandsecondary text-white py-3 px-4 rounded-md hover:bg-blue-900 transition-colors flex items-center justify-center gap-2">
           APPLY FOR THIS LOAN
           <ArrowRightIcon className="h-5 w-5" />
         </button>

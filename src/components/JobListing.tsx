@@ -75,7 +75,7 @@ const JobListing = ({ job, isExpanded, onToggle, onApply }: JobListingProps) => 
 
           <button 
             onClick={() => onApply(job.id)}
-            className='mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors'
+            className='mt-6 px-6 py-2 bg-brandsecondary text-white rounded-md hover:bg-blue-900 transition-colors'
           >
             Apply for This Position
           </button>

@@ -150,7 +150,7 @@ const ApplicationForm = ({ job, onClose }: ApplicationFormProps) => {
           <button
             type='submit'
             disabled={isSubmitting}
-            className='w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-400'
+            className='w-full bg-brandsecondary text-white py-3 px-4 rounded-md hover:bg-blue-900 transition-colors disabled:bg-blue-400'
           >
             {isSubmitting ? 'Submitting...' : 'Submit Application'}
           </button>

@@ -31,16 +31,16 @@ const page = () => {
               transition={{ duration: 0.8 }}
               className='rounded-lg bg-white p-8 opacity-90 max-w-2xl'
             >
-              <p className='pt-2 text-blue-600 font-medium'>About CMCS</p>
+              <p className='pt-2 text-brandsecondary font-medium'>About CMCS</p>
               <p className='pt-2 pb-4 text-gray-700'>Navigating your business growth with experience & insightful solutions.</p>
-              <h1 className='pt-4 pb-4 text-3xl md:text-4xl font-bold text-gray-900'>
+              <h1 className='pt-4 pb-4 text-3xl md:text-4xl font-bold text-gold'>
                 We&apos;re an award-winning microcredit services provider
               </h1>
               <Link href="/contact" passHref>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className='px-6 py-3 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition-colors'
+                className='px-6 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors'
               >
                 GET IN TOUCH
               </motion.button>
@@ -61,7 +61,7 @@ const page = () => {
               viewport={{ once: true }}
               className='bg-white shadow-lg p-6 rounded-lg'
             >
-              <h1 className='text-3xl font-thin p-4 text-blue-900'>Welcome to Cyrus MicroCredit Services (CMCS)!</h1>
+              <h1 className='text-3xl font-thin p-4 text-brandsecondary'>Welcome to Cyrus MicroCredit Services (CMCS)!</h1>
               <p className='p-4 text-gray-700 leading-relaxed text-justify'>
               Isaiah 44: 28 Isaiah who prophesied from about 740-761 B.C called
 CYRUS by name almost 150years before he ruled (559-530 B.C)! Later
@@ -80,22 +80,22 @@ kingdom spread across 2,000 miles (the largest of any empire
 then known) including the Assyrian and the Babylonian Empires.
               </p>
               <div className='p-4'>
-                <h2 className='text-xl font-semibold text-blue-800 mb-3'>Our Corporate Values</h2>
+                <h2 className='text-xl font-semibold text-brandsecondary mb-3'>Our Corporate Values</h2>
                 <div className='grid grid-cols-2 gap-4'>
                   <div className='flex items-start space-x-2'>
-                    <ShieldCheck className='text-blue-500 mt-1' size={20} />
+                    <ShieldCheck className='text-gold mt-1' size={20} />
                     <span className='text-gray-700'>Results Oriented</span>
                   </div>
                   <div className='flex items-start space-x-2'>
-                    <Users className='text-blue-500 mt-1' size={20} />
+                    <Users className='text-gold mt-1' size={20} />
                     <span className='text-gray-700'>Respect</span>
                   </div>
                   <div className='flex items-start space-x-2'>
-                    <BarChart2 className='text-blue-500 mt-1' size={20} />
+                    <BarChart2 className='text-gold mt-1' size={20} />
                     <span className='text-gray-700'>Innovation</span>
                   </div>
                   <div className='flex items-start space-x-2'>
-                    <Handshake className='text-blue-500 mt-1' size={20} />
+                    <Handshake className='text-gold mt-1' size={20} />
                     <span className='text-gray-700'>Dedication</span>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ then known) including the Assyrian and the Babylonian Empires.
                 viewport={{ once: true }}
                 className='bg-white shadow-lg rounded-lg flex overflow-hidden hover:shadow-xl transition-shadow'
               >
-                <div className='bg-blue-500 p-8 content-center min-w-[100px] flex items-center justify-center'>
+                <div className='bg-brandsecondary p-8 content-center min-w-[100px] flex items-center justify-center'>
                   <DatabaseBackup size={50} className='text-white' />
                 </div>
                 <div className='p-6'>
@@ -130,7 +130,7 @@ then known) including the Assyrian and the Babylonian Empires.
                 viewport={{ once: true }}
                 className='bg-white shadow-lg rounded-lg flex overflow-hidden hover:shadow-xl transition-shadow'
               >
-                <div className='bg-blue-500 p-8 content-center min-w-[100px] flex items-center justify-center'>
+                <div className='bg-brandsecondary p-8 content-center min-w-[100px] flex items-center justify-center'>
                   <Goal size={50} className='text-white' />
                 </div>
                 <div className='p-6'>
@@ -150,7 +150,7 @@ then known) including the Assyrian and the Babylonian Empires.
                 viewport={{ once: true }}
                 className='bg-white shadow-lg rounded-lg flex overflow-hidden hover:shadow-xl transition-shadow'
               >
-                <div className='bg-blue-500 p-8 content-center min-w-[100px] flex items-center justify-center'>
+                <div className='bg-brandsecondary p-8 content-center min-w-[100px] flex items-center justify-center'>
                   <Award size={50} className='text-white' />
                 </div>
                 <div className='p-6'>
@@ -174,14 +174,14 @@ then known) including the Assyrian and the Babylonian Empires.
       </div>
 
       {/* Stats Section */}
-      <div className='bg-blue-900 py-12'>
+      <div className='bg-brandsecondary py-12'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className='grid grid-cols-1 md:grid-cols-4 divide-x divide-blue-700'
+            className='grid grid-cols-1 md:grid-cols-4 divide-x divide-blue-900'
           >
             {[
               { value: 120, suffix: '+', label: 'Partner with Us', icon: <Handshake className='mx-auto mb-2' size={24} /> },
@@ -190,7 +190,7 @@ then known) including the Assyrian and the Babylonian Empires.
               { value: 1, prefix: '₵', suffix: '.3b+', label: 'Cumulative Trading', icon: <Globe className='mx-auto mb-2' size={24} /> }
             ].map((stat, index) => (
               <div key={index} className='p-8 text-center group'>
-                <div className='text-white mb-2'>{stat.icon}</div>
+                <div className='text-gold mb-2'>{stat.icon}</div>
                 <h1 className='text-white text-3xl md:text-4xl font-bold mb-2'>
                   {stat.prefix}<CountUp end={stat.value} duration={5}/>{stat.suffix}
                 </h1>
@@ -257,7 +257,7 @@ then known) including the Assyrian and the Babylonian Empires.
                     className='object-cover'
                   />
                   <div className='absolute inset-0 bg-blue-900/30 flex items-center justify-center'>
-                    <div className='bg-blue-500 p-4 rounded-full text-white'>
+                    <div className='bg-gold p-4 rounded-full text-white'>
                       {service.icon}
                     </div>
                   </div>
@@ -298,7 +298,7 @@ then known) including the Assyrian and the Babylonian Empires.
       </div>
 
       {/* CTA Section */}
-      <div className='bg-blue-900 py-16'>
+      <div className='bg-brandsecondary py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <motion.div
             initial={{ opacity: 0 }}
@@ -307,7 +307,7 @@ then known) including the Assyrian and the Babylonian Empires.
             viewport={{ once: true }}
             className='bg-white p-8 md:p-12 rounded-lg shadow-lg max-w-4xl mx-auto'
           >
-            <h2 className='text-2xl md:text-3xl font-thin text-blue-900 mb-4'>
+            <h2 className='text-2xl md:text-3xl font-thin text-brandsecondary mb-4'>
               Ready to grow your business with CMCS?
             </h2>
             <p className='text-gray-700 mb-8 max-w-2xl mx-auto'>
@@ -318,7 +318,7 @@ then known) including the Assyrian and the Babylonian Empires.
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className='px-8 py-3 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition-colors'
+                className='px-8 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors'
               >
                 GET STARTED
               </motion.button>
@@ -327,7 +327,7 @@ then known) including the Assyrian and the Babylonian Empires.
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className='px-8 py-3 rounded-lg text-blue-700 bg-white border border-blue-300 hover:bg-gray-50 transition-colors'
+                className='px-8 py-3 rounded-lg text-brandsecondary bg-white border border-gold hover:bg-gray-50 transition-colors'
               >
                 CONTACT US
               </motion.button>

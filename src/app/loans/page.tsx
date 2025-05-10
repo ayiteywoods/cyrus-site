@@ -104,9 +104,9 @@ const Page = () => {
             >
               <p className='pt-2 text-blue-600 font-medium'>Apply for Loans</p>
               <p className='pt-2 pb-4 text-gray-700'>Choose your ideal plan. No obligation, cancel anytime.</p>
-              <h1 className='pt-4 pb-4 text-3xl font-bold'>Financial Solutions Tailored for You</h1>
+              <h1 className='pt-4 pb-4 text-3xl font-bold text-gold'>Financial Solutions Tailored for You</h1>
               <Link href="/loans" passHref>
-              <button className='px-6 py-3 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors'>
+              <button className='px-6 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors'>
                 APPLY NOW
               </button>
               </Link>
@@ -118,7 +118,7 @@ const Page = () => {
       {/* Loan Products Section */}
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
         <div className='text-center mb-12'>
-          <h2 className='text-3xl font-thin text-gray-800'>Our Loan Products</h2>
+          <h2 className='text-3xl font-thin text-brandsecondary'>Our Loan Products</h2>
           <p className='text-gray-600 mt-4 max-w-2xl mx-auto'>
             Flexible financing options designed to meet your business needs
           </p>
@@ -128,19 +128,19 @@ const Page = () => {
         <div className='flex justify-center mb-8 border-b border-gray-200'>
           <button
             onClick={() => setActiveTab('types')}
-            className={`px-6 py-3 font-medium ${activeTab === 'types' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+            className={`px-6 py-3 font-medium ${activeTab === 'types' ? 'text-gold border-b-2 border-gold' : 'text-gray-500'}`}
           >
             Loan Types
           </button>
           <button
             onClick={() => setActiveTab('calculator')}
-            className={`px-6 py-3 font-medium ${activeTab === 'calculator' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+            className={`px-6 py-3 font-medium ${activeTab === 'calculator' ? 'text-gold border-b-2 border-gold' : 'text-gray-500'}`}
           >
             Loan Calculator
           </button>
           <button
             onClick={() => setActiveTab('faq')}
-            className={`px-6 py-3 font-medium ${activeTab === 'faq' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
+            className={`px-6 py-3 font-medium ${activeTab === 'faq' ? 'text-gold border-b-2 border-gold' : 'text-gray-500'}`}
           >
             FAQs
           </button>
@@ -162,7 +162,7 @@ const Page = () => {
                   <div className='flex justify-center mb-4'>
                     <DynamicHeroIcon 
                       icon={loan.icon} 
-                      className="h-12 w-12 text-blue-600" 
+                      className="h-12 w-12 text-gold" 
                     />
                   </div>
                   <h3 className='text-xl font-semibold text-gray-800 mb-2'>{loan.name}</h3>
@@ -173,8 +173,8 @@ const Page = () => {
                     <p><span className='font-medium'>Term:</span> {loan.term}</p>
                   </div>
                 </div>
-                <div className='bg-blue-50 px-6 py-3 text-center'>
-                  <button className='text-blue-600 font-medium hover:text-blue-800'>
+                <div className='bg-gold px-6 py-3 text-center'>
+                  <button className='text-white font-medium hover:text-white'>
                     Learn More →
                   </button>
                 </div>
@@ -201,9 +201,9 @@ const Page = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.02 }}
-            className='bg-blue-600 rounded-lg p-10 flex flex-col items-center justify-center gap-6 text-white'
+            className='bg-brandsecondary rounded-lg p-10 flex flex-col items-center justify-center gap-6 text-white'
           >
-            <DynamicHeroIcon icon="ChatBubbleLeftRight" className="h-16 w-16 text-white" />
+            <DynamicHeroIcon icon="ChatBubbleLeftRight" className="h-16 w-16 text-gold" />
             <h1 className='text-3xl md:text-4xl font-bold text-center'>
               Need a Custom Loan Solution?
             </h1>
@@ -211,7 +211,7 @@ const Page = () => {
               Our financial experts will create a personalized plan for your unique needs
             </p>
             <Link href="/contact" passHref>
-            <button className='w-full max-w-xs rounded-lg bg-white px-6 py-3 text-blue-600 font-medium hover:bg-gray-100 transition-colors'>
+            <button className='w-full max-w-xs rounded-lg bg-white px-6 py-3 text-brandsecondary font-medium hover:bg-gray-100 transition-colors'>
               SPEAK WITH AN ADVISOR
             </button>
             </Link>
@@ -227,7 +227,7 @@ const Page = () => {
       {/* Application Process */}
       <div className='bg-gray-50 py-12'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <h2 className='text-3xl font-thin text-center mb-12'>Simple Application Process</h2>
+          <h2 className='text-3xl font-thin text-center mb-12 text-brandsecondary'>Simple Application Process</h2>
           <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
             {processSteps.map((step) => (
               <motion.div
@@ -238,7 +238,7 @@ const Page = () => {
                 <div className='w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4'>
                   <DynamicHeroIcon 
                     icon={step.icon} 
-                    className="h-8 w-8 text-blue-600" 
+                    className="h-8 w-8 text-gold" 
                   />
                 </div>
                 <h3 className='text-xl font-semibold mb-2'>{step.title}</h3>

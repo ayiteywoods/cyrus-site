@@ -22,8 +22,8 @@ const CareerBenefits = () => {
             whileHover={{ y: -5 }}
             className='bg-white p-6 rounded-lg shadow-sm border border-gray-100'
           >
-            <div className='w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4'>
-              <DynamicHeroIcon icon={benefit.icon} className='h-6 w-6 text-blue-600' />
+            <div className='w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4'>
+              <DynamicHeroIcon icon={benefit.icon} className='h-6 w-6 text-gold' />
             </div>
             <h3 className='text-xl font-semibold mb-2'>{benefit.title}</h3>
             <p className='text-gray-600'>{benefit.description}</p>

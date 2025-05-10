@@ -16,12 +16,12 @@ export default function Services() {
         />
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
           <div className='flex justify-between items-center'>
-            <div className='rounded-lg bg-white p-8 opacity-70'>
+            <div className='rounded-lg bg-white p-8 opacity-80'>
               <p className='pt-2 text-blue-600'>Our Services</p>
               <p className='pt-2 pb-4'>Tailored solutions to help your business thrive in today&apos;s competitive landscape.</p>
-              <h1 className='pt-4 pb-4 text-3xl'>Comprehensive Financial Solutions</h1>
+              <h1 className='pt-4 pb-4 text-3xl text-gold'>Comprehensive Financial Solutions</h1>
               <Link href="/contact" className="inline-block">
-                <button className='px-6 py-3 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition-colors'>
+                <button className='px-6 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors'>
                   GET IN TOUCH
                 </button>
               </Link>

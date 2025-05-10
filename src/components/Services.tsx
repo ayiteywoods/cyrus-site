@@ -43,7 +43,7 @@ const ServiceCard = ({ title, description, image, features }: ServiceCardProps) 
           ))}
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+      <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-yellow-400 to-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
     </div>
   );
 };
@@ -91,13 +91,13 @@ export default function ServicesContent() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <span className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+            <span className="text-sm font-semibold uppercase tracking-wider text-brandsecondary">
               Our Methodology
             </span>
             <h2 className="mt-2 text-3xl font-thin text-gray-900 md:text-4xl">
               Specialized Lending Approaches
             </h2>
-            <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+            <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-yellow-400 to-gold"></div>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -111,7 +111,7 @@ export default function ServicesContent() {
       {/* CTA Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-12 text-center shadow-lg">
+          <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-yellow-600 to-gold px-8 py-12 text-center shadow-lg">
             <div className="absolute inset-0 opacity-10">
               <Image
                 src="/slider4.jpg"

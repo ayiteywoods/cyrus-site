@@ -146,7 +146,7 @@ export default function Home() {
 
   
 
-      <div className='bg-brand relative overflow-hidden'>
+      <div className='bg-brandsecondary relative overflow-hidden'>
   {/* Full-width organic swell background */}
   <div className="absolute inset-0 overflow-hidden opacity-30">
     <svg
@@ -224,7 +224,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-thin text-blue-900 mb-4">Our Core Services</h2>
+            <h2 className="text-3xl font-thin text-brandsecondary mb-4">Our Core Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Comprehensive financial solutions tailored to your needs
             </p>
@@ -241,7 +241,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-cyan-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all"
               >
-                <div className="text-blue-600 mb-4">
+                <div className="text-gold mb-4">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
@@ -256,7 +256,7 @@ export default function Home() {
       {/* Impact Section */}
       <div className="bg-blue-50 w-full"> {/* Full width blue background */}
            {/* Stats Section */}
-     <section className="relative bg-brand py-16 overflow-hidden">
+     <section className="relative bg-brandsecondary py-16 overflow-hidden">
   {/* Vector Swell Background */}
   <div className="absolute inset-0 overflow-hidden opacity-30">
   <svg
@@ -326,7 +326,7 @@ export default function Home() {
           whileHover={{ y: -5 }}
           className="bg-white p-6 rounded-lg text-center shadow-md"
         >
-          <div className="text-brand mb-4 flex justify-center">
+          <div className="text-gold mb-4 flex justify-center">
             {stat.icon}
           </div>
           <h3 className="text-3xl font-bold text-gray-900 mb-2">
@@ -432,7 +432,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-cyan-200 py-16">
+      <section className="bg-yellow-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}

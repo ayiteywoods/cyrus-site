@@ -57,8 +57,8 @@ export default function ContactPage() {
           <div className="rounded-lg bg-white p-8 opacity-90 max-w-2xl">
             <p className="pt-2 text-blue-400">Contact Us</p>
             <p className="pt-2 pb-4">We&apos;ll gladly answer any of your questions.</p>
-            <h1 className="pt-4 pb-4 text-3xl">Get in touch with us! We are here to Help!</h1>
-            <button className="px-6 py-3 rounded-lg text-white bg-blue-400 hover:bg-blue-500 transition-colors">
+            <h1 className="pt-4 pb-4 text-3xl text-gold">Get in touch with us! We are here to Help!</h1>
+            <button className="px-6 py-3 rounded-lg text-white bg-brandsecondary hover:bg-blue-900 transition-colors">
               GET IN TOUCH
             </button>
           </div>
@@ -73,8 +73,8 @@ export default function ContactPage() {
             {/* Phone Support */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <Phone className="text-blue-400 h-5 w-5" />
+                <div className="bg-yellow-100 p-3 rounded-full mr-4">
+                  <Phone className="text-gold h-5 w-5" />
                 </div>
                 <h3 className="text-xl font-thin">Phone Support</h3>
               </div>
@@ -103,8 +103,8 @@ export default function ContactPage() {
             {/* Email Us */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <Mail className="text-blue-400 h-5 w-5" />
+                <div className="bg-yellow-100 p-3 rounded-full mr-4">
+                  <Mail className="text-gold h-5 w-5" />
                 </div>
                 <h3 className="text-xl font-thin">Email Us</h3>
               </div>
@@ -120,8 +120,8 @@ export default function ContactPage() {
             {/* Branch Locations */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <MapPin className="text-blue-400 h-5 w-5" />
+                <div className="bg-yellow-100 p-3 rounded-full mr-4">
+                  <MapPin className="text-gold h-5 w-5" />
                 </div>
                 <h3 className="text-xl font-thin">Branch Locations</h3>
               </div>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                   <h4 className="font-medium">Head Office</h4>
                   <p className="text-gray-600">Ground Floor, Leonardo Hotel Opposite Tema</p>
                   <p className="text-gray-600">Newtown Post Office, P.O.Box rvt 636, Tema</p>
-                  <p className="text-orange-500 text-sm mt-1">Monday - Friday: 8:30 AM - 4:00 PM</p>
+                  <p className="text-gold text-sm mt-1">Monday - Friday: 8:30 AM - 4:00 PM</p>
                 </div>
               </div>
             </div>
@@ -235,7 +235,7 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+                  className="w-full bg-brandsecondary text-white py-3 px-4 rounded-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}

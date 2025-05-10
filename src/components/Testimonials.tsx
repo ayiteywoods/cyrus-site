@@ -66,7 +66,7 @@ const Testimonials = () => {
               &amp;{testimonial.quote}&amp;
               </blockquote>
               <div className='flex items-center'>
-                <div className='bg-blue-500 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold'>
+                <div className='bg-brandsecondary rounded-full w-12 h-12 flex items-center justify-center text-white font-bold'>
                   {testimonial.name.charAt(0)}
                 </div>
                 <div className='ml-4'>
@@ -85,7 +85,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className='mt-12 text-center'
         >
-          <button className='px-6 py-3 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50 transition-colors'>
+          <button className='px-6 py-3 border border-brandsecondary text-brandsecondary rounded-lg hover:bg-blue-50 transition-colors'>
             View More Testimonials
           </button>
         </motion.div>

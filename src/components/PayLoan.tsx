@@ -9,28 +9,28 @@ const PayLoan = () => {
       <div className='flex flex-col lg:flex-row justify-between items-center gap-8'>
         {/* Text Content */}
         <div className='shadow-lg p-6 md:p-10 bg-cyan-50 rounded-2xl w-full lg:w-[60%]'>
-          <h1 className='text-2xl md:text-3xl text-brandsecondary font-semibold mb-4'>
+          <h1 className='text-2xl md:text-3xl text-gold font-semibold mb-4'>
             We Promise Sustainable Future For You..
           </h1>
           
           <div className='space-y-3'>
             <p className='text-base md:text-lg flex gap-2 items-start'>
-              <Goal className='text-orange-300 flex-shrink-0 mt-1' size={20}/>
+              <Goal className='text-gold flex-shrink-0 mt-1' size={20}/>
               <span>Loans are very small, short-term, and unsecured, with more frequent repayments.</span>
             </p>
 
             <p className='text-base md:text-lg flex gap-2 items-start'> 
-              <Goal className='text-orange-300 flex-shrink-0 mt-1' size={20}/>
+              <Goal className='text-gold flex-shrink-0 mt-1' size={20}/>
               <span>The screening process ensures that the applicants are micro borrowers.</span>
             </p>
 
             <p className='text-base md:text-lg flex gap-2 items-start'> 
-              <Goal className='text-orange-300 flex-shrink-0 mt-1' size={20}/>
+              <Goal className='text-gold flex-shrink-0 mt-1' size={20}/>
               <span>The applicants are then registered after they pass the screening stage.</span>
             </p>
 
             <p className='text-base md:text-lg flex gap-2 items-start'>
-              <Goal className='text-orange-300 flex-shrink-0 mt-1' size={20}/>
+              <Goal className='text-gold flex-shrink-0 mt-1' size={20}/>
               <span>Loan documentation is generated largely by the Loans and Operations managers through visits to the borrower&apos;s business and home.</span>
             </p>
           </div>
