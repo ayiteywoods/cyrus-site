@@ -39,7 +39,7 @@ export default function ComingSoonPage() {
   }, [])
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-700 to-blue-600/70 text-white px-6">
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brandsecondary to-blue-600/70 text-white px-6">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
