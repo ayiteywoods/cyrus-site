@@ -71,9 +71,8 @@ const Footer = () => {
   const legalLinks: FooterLink[] = [
     { name: 'Terms & Conditions', url: '#' },
     { name: 'Privacy Notice', url: '#' },
-    { name: 'Cookie Policy', url: '#' },
     { name: 'Security', url: '#' },
-    { name: 'Modern Slavery Act', url: '#' },
+    
   ];
 
   const socialLinks: SocialLink[] = [
