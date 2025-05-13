@@ -69,9 +69,9 @@ const Footer = () => {
   ];
 
   const legalLinks: FooterLink[] = [
-    { name: 'Terms & Conditions', url: '#' },
-    { name: 'Privacy Notice', url: '#' },
-    { name: 'Security', url: '#' },
+    { name: 'Terms & Conditions', url: '/TermsAndConditions' },
+    { name: 'Privacy Notice', url: '/PrivacyNotice' },
+    { name: 'Security', url: '/Security' },
     
   ];
 
