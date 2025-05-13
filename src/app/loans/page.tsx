@@ -34,6 +34,7 @@ const lucideIconMap: { [key: string]: React.ElementType } = {
   Truck: Truck,
 };
 
+// 🧾 Type definitions
 interface LoanType {
   id: number;
   name: string;
@@ -43,6 +44,8 @@ interface LoanType {
   term: string;
   icon: string;
 }
+
+type TabKey = 'types' | 'calculator' | 'faq';
 
 const loanTypes: LoanType[] = [
   {
@@ -84,7 +87,7 @@ const loanTypes: LoanType[] = [
 ];
 
 const Page = () => {
-  const [activeTab, setActiveTab] = useState<'types' | 'calculator' | 'faq'>('types');
+  const [activeTab, setActiveTab] = useState<TabKey>('types');
   const [selectedLoan, setSelectedLoan] = useState<LoanType | null>(null);
 
   const processSteps = [
@@ -155,10 +158,10 @@ const Page = () => {
 
         {/* Loan Type Tabs */}
         <div className='flex justify-center mb-8 border-b border-gray-200'>
-          {['types', 'calculator', 'faq'].map((tab) => (
+          {(['types', 'calculator', 'faq'] as TabKey[]).map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab as any)}
+              onClick={() => setActiveTab(tab)}
               className={`px-6 py-3 font-medium ${
                 activeTab === tab ? 'text-gold border-b-2 border-gold' : 'text-gray-500'
               }`}
@@ -190,15 +193,9 @@ const Page = () => {
                     <h3 className='text-xl font-semibold text-gray-800 mb-2'>{loan.name}</h3>
                     <p className='text-gray-600 mb-4'>{loan.description}</p>
                     <div className='space-y-2 text-sm'>
-                      <p>
-                        <span className='font-medium'>Amount:</span> {loan.amountRange}
-                      </p>
-                      <p>
-                        <span className='font-medium'>Interest:</span> {loan.interestRate}
-                      </p>
-                      <p>
-                        <span className='font-medium'>Term:</span> {loan.term}
-                      </p>
+                      <p><span className='font-medium'>Amount:</span> {loan.amountRange}</p>
+                      <p><span className='font-medium'>Interest:</span> {loan.interestRate}</p>
+                      <p><span className='font-medium'>Term:</span> {loan.term}</p>
                     </div>
                   </div>
                   <div className='bg-gold px-6 py-3 text-center'>
