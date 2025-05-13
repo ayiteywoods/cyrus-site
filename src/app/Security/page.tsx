@@ -10,7 +10,7 @@ const Security = () => {
 
       <section className="space-y-6">
         <p>
-          At <strong>Cyrus MicroCredit</strong>, protecting your information is our top priority. Here's how
+          At <strong>Cyrus MicroCredit</strong>, protecting your information is our top priority. This is how
           we keep your data safe.
         </p>
 
