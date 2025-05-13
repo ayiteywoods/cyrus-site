@@ -22,7 +22,16 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         <h3 className="text-xl font-semibold">{testimonial.name}</h3>
         <p className="text-sm text-gray-500 mb-2">{testimonial.role}</p>
         <p className="text-gray-700 text-sm">{testimonial.message}</p>
-        <Link href={testimonial.link} className="text-gray-700 text-sm" />
+        {/* ✅ Properly clickable link */}
+        <Link href={testimonial.link} passHref>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold hover:underline text-sm"
+          >
+            View Testimonial
+          </a>
+        </Link>
       </div>
     </div>
   );
