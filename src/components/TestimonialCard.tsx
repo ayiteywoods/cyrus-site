@@ -1,4 +1,5 @@
 // components/TestimonialCard.tsx
+import Link from 'next/link';
 import React from 'react';
 
 type Testimonial = {
@@ -21,7 +22,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         <h3 className="text-xl font-semibold">{testimonial.name}</h3>
         <p className="text-sm text-gray-500 mb-2">{testimonial.role}</p>
         <p className="text-gray-700 text-sm">{testimonial.message}</p>
-        <p className="text-gray-700 text-sm">{testimonial.link}</p>
+        <Link href={testimonial.link} className="text-gray-700 text-sm" />
       </div>
     </div>
   );
