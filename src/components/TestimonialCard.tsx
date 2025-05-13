@@ -6,6 +6,7 @@ type Testimonial = {
   role: string;
   message: string;
   image: string;
+  link: string;
 };
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
@@ -20,6 +21,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         <h3 className="text-xl font-semibold">{testimonial.name}</h3>
         <p className="text-sm text-gray-500 mb-2">{testimonial.role}</p>
         <p className="text-gray-700 text-sm">{testimonial.message}</p>
+        <p className="text-gray-700 text-sm">{testimonial.link}</p>
       </div>
     </div>
   );

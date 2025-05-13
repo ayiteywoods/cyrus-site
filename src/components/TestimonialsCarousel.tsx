@@ -16,6 +16,7 @@ const testimonials = [
     role: 'Entrepreneur',
     message: 'CYRUS transformed my business with their support!',
     image: '/mariam.avif',
+    link: '',
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const testimonials = [
     role: 'Farmer',
     message: 'Thanks to CYRUS, I expanded my farm operations.',
     image: '/roberta.avif',
+    link: '',
   },
   {
     id: 3,
@@ -30,13 +32,23 @@ const testimonials = [
     role: 'Petty Trader',
     message: 'With CYRUS, I got the loan I needed to grow my stall.',
     image: '/mia.avif',
+    link: '',
   },
   {
     id: 4,
-    name: 'Saadatu Musah',
+    name: 'Beauty Adjetey',
     role: 'Trader',
-    message: 'The training helped me better manage my income.',
-    image: '/person.avif',
+    message: 'Been in business with Cyrus for over fiftyeen years.',
+    image: '/beauty.png',
+    link: 'https://www.youtube.com/watch?v=47gHpOp03Fo',
+  },
+  {
+    id: 5,
+    name: 'Beatrice Abbey',
+    role: 'Trader',
+    message: 'Enjoyed Loans from Cyrus for over six years.',
+    image: '/maab.png',
+    link: 'https://www.youtube.com/watch?v=XpZ_hG1wI_c',
   },
 ];
 
