@@ -16,7 +16,7 @@ const testimonials = [
     role: 'Entrepreneur',
     message: 'CYRUS transformed my business with their support!',
     image: '/mariam.avif',
-    link: '',
+    link: 'https://www.youtube.com/watch?v=jirqlGnx9EM',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const testimonials = [
     role: 'Farmer',
     message: 'Thanks to CYRUS, I expanded my farm operations.',
     image: '/roberta.avif',
-    link: '',
+    link: 'https://www.youtube.com/watch?v=jirqlGnx9EM',
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const testimonials = [
     role: 'Petty Trader',
     message: 'With CYRUS, I got the loan I needed to grow my stall.',
     image: '/mia.avif',
-    link: '',
+    link: 'https://www.youtube.com/watch?v=jirqlGnx9EM',
   },
   {
     id: 4,
