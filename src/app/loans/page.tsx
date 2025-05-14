@@ -89,7 +89,6 @@ const loanTypes: LoanType[] = [
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState<TabKey>('types');
-  const [selectedLoan, setSelectedLoan] = useState<LoanType | null>(null);
 
   const processSteps = [
     {
@@ -185,7 +184,7 @@ const Page = () => {
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.3 }}
                   className='bg-white rounded-lg shadow-md overflow-hidden border border-gray-100'
-                  onClick={() => setSelectedLoan(loan)}
+                  
                 >
                   <div className='p-6'>
                     <div className='flex justify-center mb-4'>
