@@ -51,7 +51,7 @@ const Footer = () => {
     {
       title: 'Financial Solutions',
       links: [
-        { name: 'Loan Calculator', url: '/loans' },
+       
         { name: 'Loan Types', url: '/loans' },
         { name: 'FAQs', url: '/faq' },
         {name: 'Success Stories', url: '/loans'},
