@@ -2,7 +2,7 @@
 
 import LoanFAQ from '@/components/LoanFAQ';
 import Partners from '@/components/Partners';
-import LoanCalculator from '@/components/LoanCalculator';
+// import LoanCalculator from '@/components/LoanCalculator'; // Commented out
 import LoanTestimonials from '@/components/LoanTestimonials';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -45,7 +45,8 @@ interface LoanType {
   icon: string;
 }
 
-type TabKey = 'types' | 'calculator' | 'faq';
+// Changed to only include 'types' and 'faq'
+type TabKey = 'types' | 'faq';
 
 const loanTypes: LoanType[] = [
   {
@@ -156,9 +157,9 @@ const Page = () => {
           </p>
         </div>
 
-        {/* Loan Type Tabs */}
+        {/* Loan Type Tabs - Updated to only show Loan Types and FAQs */}
         <div className='flex justify-center mb-8 border-b border-gray-200'>
-          {(['types', 'calculator', 'faq'] as TabKey[]).map((tab) => (
+          {(['types', 'faq'] as TabKey[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -166,7 +167,7 @@ const Page = () => {
                 activeTab === tab ? 'text-gold border-b-2 border-gold' : 'text-gray-500'
               }`}
             >
-              {tab === 'types' ? 'Loan Types' : tab === 'calculator' ? 'Loan Calculator' : 'FAQs'}
+              {tab === 'types' ? 'Loan Types' : 'FAQs'}
             </button>
           ))}
         </div>
@@ -209,7 +210,9 @@ const Page = () => {
           </div>
         )}
 
-        {activeTab === 'calculator' && <LoanCalculator selectedLoan={selectedLoan} />}
+        {/* Commented out Loan Calculator */}
+        {/* {activeTab === 'calculator' && <LoanCalculator selectedLoan={selectedLoan} />} */}
+
         {activeTab === 'faq' && (
           <div className='bg-white rounded-lg shadow-sm p-6'>
             <LoanFAQ />

@@ -100,7 +100,7 @@ export default function Home() {
         viewport={{ once: true }}
         className="bg-white shadow-lg p-8 rounded-lg hover:shadow-xl transition-shadow"
       >
-        <h1 className="text-3xl font-thin text-blue-900 pt-4 pb-6">
+        <h1 className="text-3xl text-blue-900 pt-4 pb-6">
           Welcome to Cyrus MicroCredit Services (CMCS)!
         </h1>
         <p className="text-gray-700 leading-relaxed text-justify">
@@ -344,6 +344,13 @@ export default function Home() {
       <div className="bg-cyan-50 rounded-2xl shadow my-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <ClientCentric />
+          <div className='mt-6 mb-4'>
+      <h1 className='text-2xl'>Respect</h1>
+       <p>Every client is part of the building block to make to whole. CYRUS 
+        recognizes this role therefore CYRUS and its agents treat every client 
+        with the utmost respect. This does not only apply to clients but to 
+        all stakeholders of CYRUS.</p>
+      </div>
         </div>
       </div>
       </div>

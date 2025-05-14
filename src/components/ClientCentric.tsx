@@ -59,6 +59,7 @@ const ClientCentric = () => {
             </div>
         </motion.div>
 
+      
        
     </div>
     </>
