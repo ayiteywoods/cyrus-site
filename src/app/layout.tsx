@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google"; // Changed from Geist to Montserrat
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import {menuItems} from '@/menuItem';
+import { menuItems } from '@/menuItem';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Set up Montserrat font
+const montserrat = Montserrat({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-montserrat",
+  // You can specify weights if needed (defaults to 400)
+  // weight: ['400', '500', '700'],
 });
 
 export const metadata: Metadata = {
@@ -38,14 +36,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.className} antialiased`} // Changed to use Montserrat directly
       >
         <Navbar
-        logo={<span className="text-blue-800 font-bold">
-          <Image src='/Cyrus logo.png' alt='logo' width={100} height={40}/>
-        </span>}
-        menuItems={menuItems}
-      />
+          logo={<span className="text-blue-800 font-bold">
+            <Image src='/Cyrus logo.png' alt='logo' width={100} height={40} />
+          </span>}
+          menuItems={menuItems}
+        />
         {children}
         <Footer />
       </body>
