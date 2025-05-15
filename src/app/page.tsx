@@ -351,7 +351,111 @@ export default function Home() {
         with the utmost respect. This does not only apply to clients but to 
         all stakeholders of CYRUS.</p>
       </div>
+      <div>
+        
+          <p>A client-centric approach in microfinance prioritizes the needs, preferences, 
+            and well-being of clients, ensuring that financial services are designed and 
+            delivered to meet their unique requirements.
+          </p>
+          <h1 className='mt-6 text-2xl'>
+          Key Principles of Client-Centric Approach
+          </h1>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4'>
+            <div className=''>
+              <div className='bg-white p-4 rounded-3xl shadow'>
+                <div className='flex gap-3 items-center'>
+                  <p className='rounded-full p-2 text-gold bg-yellow-100 w-10 
+                  h-10 text-center text-lg font-bold'>1</p>
+                  <h1 className='font-bold'>Client Feedback: </h1>
+                </div>
+                <p className='p-4 text-justify'>Regularly collect and incorporate client 
+                  feedback to improve products and services.
+                </p>
+              </div>
+            </div>
+            <div className=''>
+              <div className='bg-white p-4 rounded-3xl shadow'>
+                <div className='flex gap-3 items-center'>
+                  <p className='rounded-full p-2 text-gold bg-yellow-100 w-10 
+                  h-10 text-center text-lg font-bold'>2</p>
+                  <h1 className='font-bold'>⁠Client Segmentation: </h1>
+                </div>
+                <p className='p-4 text-justify'> Segment clients based on their needs, behaviors, 
+                  and preferences to offer tailored services.
+                </p>
+              </div>
+            </div>
+
+            <div className=''>
+              <div className='bg-white p-4 rounded-3xl shadow'>
+                <div className='flex gap-3 items-center'>
+                  <p className='rounded-full p-2 text-gold bg-yellow-100 w-10 
+                  h-10 text-center text-lg font-bold'>3</p>
+                  <h1 className='font-bold'>Financial Literacy: </h1>
+                </div>
+                <p className='p-4 text-justify'> Educate clients on financial management, budgeting, 
+                  and responsible borrowing practices.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4'>
+            <div className=''>
+              <div className='bg-white p-4 rounded-3xl shadow'>
+                <div className='flex gap-3 items-center'>
+                  <p className='rounded-full p-2 text-gold bg-yellow-100 w-10 
+                  h-10 text-center text-lg font-bold'>4</p>
+                  <h1 className='font-bold'>Transparency: </h1>
+                </div>
+                <p className='p-4 text-justify'> Clearly disclose product features, pricing, 
+                  and terms to ensure clients make informed decisions.
+                </p>
+              </div>
+            </div>
+            <div className=''>
+              <div className='bg-white p-4 rounded-3xl shadow'>
+                <div className='flex gap-3 items-center'>
+                  <p className='rounded-full p-2 text-gold bg-yellow-100 w-10 
+                  h-10 text-center text-lg font-bold'>5</p>
+                  <h1 className='font-bold'>Accessibility: </h1>
+                </div>
+                <p className='p-4 text-justify'>Provide convenient access to financial services 
+                  through various channels, such as mobile banking or agent networks.
+
+                </p>
+              </div>
+            </div>
+
+            <div className=''>
+              <div className='bg-white p-4 rounded-3xl shadow'>
+                <div className='flex gap-3 items-center'>
+                  <p className='rounded-full p-2 text-gold bg-yellow-100 w-10 
+                  h-10 text-center text-lg font-bold'>6</p>
+                  <h1 className='font-bold'>⁠Affordability: </h1>
+                </div>
+                <p className='p-4 text-justify'>Offer affordable financial products and services that 
+                  cater to clients' financial capabilities.
+
+                </p>
+              </div>
+            </div>
+            <div className=''>
+              <div className='bg-white p-4 rounded-3xl shadow'>
+                <div className='flex gap-3 items-center'>
+                  <p className='rounded-full p-2 text-gold bg-yellow-100 w-10 
+                  h-10 text-center text-lg font-bold'>7</p>
+                  <h1 className='font-bold'>Responsible Lending: </h1>
+                </div>
+                <p className='p-4 text-justify'>Implement responsible lending practices, such as assessing 
+                  creditworthiness and preventing over-indebtedness.
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
         </div>
+
+        
       </div>
       </div>
 
