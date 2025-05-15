@@ -434,7 +434,7 @@ export default function Home() {
                   <h1 className='font-bold'>⁠Affordability: </h1>
                 </div>
                 <p className='p-4 text-justify'>Offer affordable financial products and services that 
-                  cater to clients' financial capabilities.
+                  cater to clients financial capabilities.
 
                 </p>
               </div>
