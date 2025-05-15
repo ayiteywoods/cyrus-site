@@ -65,7 +65,7 @@ const ClientPrinciples = () => {
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex justify-between items-center w-full text-left font-semibold text-blue-800 focus:outline-none text-lg"
+              className="flex justify-between items-center w-full text-left font-semibold text-brandsecondary focus:outline-none text-lg"
             >
               {faq.header}
               <span className="ml-2 text-2xl">
