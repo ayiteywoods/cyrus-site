@@ -5,7 +5,7 @@ import {motion} from 'motion/react'
 const Support = () => {
   return (
     <div>
-        <div className='text-white text-3xl font-thin items-center p-8'>
+        <div className='text-white text-3xl items-center p-8'>
                 <h1 className='text-center'>
                 Building a Brighter Financial Future & Good Support.
                 </h1>

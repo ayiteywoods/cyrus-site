@@ -134,7 +134,7 @@ const Page = () => {
               <p className='pt-2 pb-4 text-gray-700'>
                 Choose your ideal plan. No obligation, cancel anytime.
               </p>
-              <h1 className='pt-4 pb-4 text-3xl font-thin text-gold'>
+              <h1 className='pt-4 pb-4 text-3xl text-gold'>
                 Financial Solutions Tailored for You
               </h1>
               <Link href='/loans' passHref>
@@ -150,7 +150,7 @@ const Page = () => {
       {/* Loan Products Section */}
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
         <div className='text-center mb-12'>
-          <h2 className='text-3xl font-thin text-brandsecondary'>Our Loan Products</h2>
+          <h2 className='text-3xl text-brandsecondary'>Our Loan Products</h2>
           <p className='text-gray-600 mt-4 max-w-2xl mx-auto'>
             Flexible financing options designed to meet your business needs
           </p>
@@ -243,7 +243,7 @@ const Page = () => {
           </motion.div>
 
           <div className='border border-gray-200 rounded-lg p-6 shadow-sm'>
-            <h1 className='text-3xl font-thin p-2 mb-6'>Client Success Stories</h1>
+            <h1 className='text-3xl p-2 mb-6'>Client Success Stories</h1>
             <LoanTestimonials />
           </div>
         </div>
@@ -252,7 +252,7 @@ const Page = () => {
       {/* Application Process */}
       <div className='bg-gray-50 py-12'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <h2 className='text-3xl font-thin text-center mb-12 text-brandsecondary'>
+          <h2 className='text-3xl text-center mb-12 text-brandsecondary'>
             Simple Application Process
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>

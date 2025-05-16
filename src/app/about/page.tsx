@@ -33,7 +33,7 @@ const page = () => {
             >
               <p className='pt-2 text-brandsecondary font-medium'>About CMCS</p>
               <p className='pt-2 pb-4 text-gray-700'>Navigating your business growth with experience & insightful solutions.</p>
-              <h1 className='pt-4 pb-4 text-3xl md:text-4xl font-thin text-gold'>
+              <h1 className='pt-4 pb-4 text-3xl md:text-4xl text-gold'>
                 We&apos;re an award-winning microcredit services provider
               </h1>
               <Link href="/contact" passHref>
@@ -61,7 +61,7 @@ const page = () => {
               viewport={{ once: true }}
               className='bg-white shadow-lg p-6 rounded-lg'
             >
-              <h1 className='text-3xl font-thin p-4 text-brandsecondary'>Welcome to Cyrus MicroCredit Services (CMCS)!</h1>
+              <h1 className='text-3xl  p-4 text-brandsecondary'>Welcome to Cyrus MicroCredit Services (CMCS)!</h1>
               <p className='p-4 text-gray-700 leading-relaxed text-justify'>
               Isaiah 44: 28 Isaiah who prophesied from about 740-761 B.C called
 CYRUS by name almost 150years before he ruled (559-530 B.C)! Later
@@ -213,7 +213,7 @@ then known) including the Assyrian and the Babylonian Empires.
             viewport={{ once: true }}
             className='text-center mb-12'
           >
-            <h1 className='text-3xl md:text-4xl font-thin text-blue-900 mb-4'>Provide Quality Services</h1>
+            <h1 className='text-3xl md:text-4xl text-blue-900 mb-4'>Provide Quality Services</h1>
             <p className='text-gray-600 max-w-2xl mx-auto'>
               CMCS has the full range of financial solutions to support your business growth and personal financial needs.
             </p>
@@ -307,7 +307,7 @@ then known) including the Assyrian and the Babylonian Empires.
             viewport={{ once: true }}
             className='bg-white p-8 md:p-12 rounded-lg shadow-lg max-w-4xl mx-auto'
           >
-            <h2 className='text-2xl md:text-3xl font-thin text-brandsecondary mb-4'>
+            <h2 className='text-2xl md:text-3xl text-brandsecondary mb-4'>
               Ready to grow your business with CMCS?
             </h2>
             <p className='text-gray-700 mb-8 max-w-2xl mx-auto'>

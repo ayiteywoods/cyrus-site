@@ -5,7 +5,7 @@ const Partners = () => {
   return (
     <div>
         <div className='justify-center items-center'>
-            <h1 className='text-3xl font-thin text-center p-4'>Our Partners</h1>
+            <h1 className='text-3xl text-center p-4'>Our Partners</h1>
             <p className='text-center px-20 pb-5'>
             We&apos;re proud to collaborate with industry leaders and innovators who share our commitment to excellence. 
       These strategic partnerships amplify our impact, drive innovation, and deliver exceptional value to our 

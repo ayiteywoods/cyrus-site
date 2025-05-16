@@ -91,7 +91,7 @@ const CareersPage = () => {
             className='rounded-lg bg-white p-8 opacity-90 max-w-2xl'
           >
             <p className='pt-2 text-brandsecondary font-medium'>Join Our Team</p>
-            <h1 className='pt-4 pb-4 text-3xl font-thin text-gold'>Build Your Career in Microfinance</h1>
+            <h1 className='pt-4 pb-4 text-3xl text-gold'>Build Your Career in Microfinance</h1>
             <button 
               onClick={() => {
                 setActiveTab('openings');
@@ -192,7 +192,7 @@ const CareersPage = () => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
             <div>
-              <h2 className='text-3xl font-thin mb-6'>Our Work Culture</h2>
+              <h2 className='text-3xl mb-6'>Our Work Culture</h2>
               <ul className='space-y-3'>
                 {[
                   'Flexible work arrangements',

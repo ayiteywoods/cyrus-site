@@ -94,7 +94,7 @@ export default function ServicesContent() {
             <span className="text-sm font-semibold uppercase tracking-wider text-brandsecondary">
               Our Methodology
             </span>
-            <h2 className="mt-2 text-3xl font-thin text-gray-900 md:text-4xl">
+            <h2 className="mt-2 text-3xl text-gray-900 md:text-4xl">
               Specialized Lending Approaches
             </h2>
             <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-yellow-400 to-gold"></div>
@@ -126,7 +126,7 @@ export default function ServicesContent() {
               />
             </div>
             <div className="relative z-10">
-              <h2 className="mb-4 text-3xl font-thin text-white md:text-4xl">
+              <h2 className="mb-4 text-3xl text-white md:text-4xl">
                 Ready to access our unique financial services?
               </h2>
               <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">

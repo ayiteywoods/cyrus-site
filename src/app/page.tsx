@@ -225,7 +225,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-thin text-brandsecondary mb-4">Our Core Services</h2>
+            <h2 className="text-3xl text-brandsecondary mb-4">Our Core Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Comprehensive financial solutions tailored to your needs
             </p>
@@ -462,7 +462,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-thin text-blue-900 mb-4">Success Stories</h2>
+            <h2 className="text-3xl text-blue-900 mb-4">Success Stories</h2>
             <p className="text-gray-700 max-w-2xl mx-auto">
               Businesses thrive with Cyrus Micro-Credit Solutions that deliver real results. 
               Here&apos;s what our clients say:
@@ -537,7 +537,7 @@ export default function Home() {
       viewport={{ once: true }}
       className="bg-white p-8 md:p-12 rounded-lg shadow-lg max-w-4xl mx-auto"
     >
-      <h2 className="text-2xl md:text-3xl font-thin text-blue-900 mb-4">
+      <h2 className="text-2xl md:text-3xl text-blue-900 mb-4">
         Ready to take the next step?
       </h2>
       <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
