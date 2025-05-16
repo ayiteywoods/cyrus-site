@@ -21,7 +21,7 @@ export default function HeroSlider() {
   const slides: Slide[] = [
     {
       id: 1,
-      image: '/slider11.jpg',
+      image: '/Sl1.png',
       title: 'Simplified Lending',
       subtitle: 'Access your accounts anytime, anywhere with our secure platform',
       ctaText: 'Get Started',
@@ -29,7 +29,7 @@ export default function HeroSlider() {
     },
     {
       id: 2,
-      image: '/slider7.jpg',
+      image: '/Sl2.png',
       title: 'Personal Loans',
       subtitle: 'Competitive rates for all your financial needs',
       ctaText: 'Apply Now',
@@ -37,7 +37,7 @@ export default function HeroSlider() {
     },
     {
       id: 3,
-      image: '/slider3.jpg',
+      image: '/Sl3.png',
       title: 'Business Loan Solution',
       subtitle: 'Tailored Loans for your business growth',
       ctaText: 'Explore',
@@ -45,7 +45,7 @@ export default function HeroSlider() {
     },
     {
         id: 4,
-        image: '/slider4.jpg',
+        image: '/Sl4.png',
         title: 'Convenience, Product Affordability, Ease of Service',
         subtitle: 'Finance solutions designed with you in mind',
         ctaText: 'Explore',
