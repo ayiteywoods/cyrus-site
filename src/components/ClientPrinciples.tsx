@@ -38,7 +38,7 @@ const ClientPrinciples = () => {
         discussion: "Offer affordable financial products and services that cater to clients financial capabilities.",
     },
     {
-        header: "sponsible Lending:",
+        header: "Responsible Lending:",
         discussion: "Implement responsible lending practices, such as assessing creditworthiness and preventing over-indebtedness.",
     },
    
