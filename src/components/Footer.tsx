@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 type FooterLink = {
   name: string;
@@ -80,6 +80,7 @@ const Footer = () => {
     { icon: <FaTwitter />, url: 'https://twitter.com', name: 'Twitter' },
     { icon: <FaLinkedinIn />, url: 'https://linkedin.com', name: 'LinkedIn' },
     { icon: <FaInstagram />, url: 'https://www.instagram.com/cyrusmicrocreditservices/?igsh=ZnJuZXhnY2k4cDBy&utm_source=qr', name: 'Instagram' },
+    {icon: <FaYoutube />, url: 'https://www.youtube.com/@cyrusmicrocreditservices', name: 'YouTube' },
   ];
 
   return (
