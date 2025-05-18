@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaX } from 'react-icons/fa6';
 
 type FooterLink = {
   name: string;
@@ -77,8 +78,8 @@ const Footer = () => {
 
   const socialLinks: SocialLink[] = [
     { icon: <FaFacebookF />, url: 'https://web.facebook.com/profile.php?id=61575659940082', name: 'Facebook' },
-    { icon: <FaTwitter />, url: 'https://twitter.com', name: 'Twitter' },
-    { icon: <FaLinkedinIn />, url: 'https://linkedin.com', name: 'LinkedIn' },
+    { icon: <FaX />, url: 'https://x.com/cyrusmcredits?s=11', name: 'Twitter' },
+    { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/cyrus-microcredit-94b7b7366/', name: 'LinkedIn' },
     { icon: <FaInstagram />, url: 'https://www.instagram.com/cyrusmicrocreditservices/?igsh=ZnJuZXhnY2k4cDBy&utm_source=qr', name: 'Instagram' },
     {icon: <FaYoutube />, url: 'https://www.youtube.com/@cyrusmicrocreditservices', name: 'YouTube' },
   ];
